@@ -1,0 +1,54 @@
+.footer {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.footer__start {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.footer__start h5 {
+    margin-bottom: 10px;
+}
+
+ul > li {
+    padding-bottom: 5px;
+}
+
+ul > li > a {
+    color: var(--color-subtext);
+}
+
+ul > li > a:hover {
+    color: var(--color-popy);
+}
+
+.footer__content-item-icon {
+    padding-right: 5px;
+}
+
+.footer__start-contact {
+    margin-right: 10px;
+    width: 160px;
+    height: 35px;
+    padding-left: 5px;
+}
+
+.regis__notifications button {
+    background-color: var(--color-popy);
+    color: var(--color-text-white);
+}
+
+.footer__end {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

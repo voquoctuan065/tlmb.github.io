@@ -1,0 +1,33 @@
+.wide-nav {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.wide-nav a {
+    color: var(--color-text-white);
+}
+
+.wide-nav a:hover {
+    opacity: 80%;
+}
+
+.mg-right {
+    margin-right: 30px;
+}
+
+.hotline {
+    position: absolute;
+    right: 75.5px;
+    font-size: 1.6rem;
+    color: #130f40;
+}
+
+.wide-nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.wide-nav-list a {
+    margin-right: 4px;
+}

@@ -1,0 +1,71 @@
+.navbar-container {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.Navbar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    color: var(--color-text-white);
+    font-weight: 600;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.Navbar__left, .Navbar__right {
+    display: flex;
+    align-items: center;
+}
+
+.Navbar__left span:nth-child(1) {
+    border-right: 2px solid #ccc;
+    padding-right: 5px;
+}
+
+.Navbar__left span:nth-child(2) {
+    padding: 0 5px;
+}
+
+.Navbar__left a {
+    padding-right: 5px;
+    color: var(--color-text-white);
+}
+
+.Navbar__right-new a, .Navbar__right-action a {
+    color: var(--color-text-white);
+}
+
+.Navbar__right-new:hover,
+.Navbar__right-help:hover,
+.Navbar__right-new a:hover,
+.Navbar__right-help a:hover,
+.Navbar__right-action a:hover,
+.Navbar__left a:hover {
+    box-shadow: 5px 20px -7px rgba(255, 66, 14, .9);
+    color: var(--color-primary)
+}
+
+.Navbar__right-help {
+    padding-left: 15px;
+}
+
+.Navbar__right-help a {
+    color: var(--color-text-white);
+}
+
+.Navbar__right i {
+    margin-right: 4px;
+}
+
+.Navbar__right-login {
+    border-left: 2px solid #ccc;
+    padding-left: 5px;
+}
+
+.Navbar__right-regist{
+    padding: 0 5px 0 20px;
+    margin-left: 20px;
+}

@@ -1,0 +1,44 @@
+
+.sidebar-bg {
+    background: var(--color-text-white);
+    border-radius: 2px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+.sidebar-bg-title {
+    background: var(--color-primary);
+    color: var(--color-text-white);
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+h3, .sidebar-bg-title i {
+    font-size: 1.5rem;
+}
+
+.sidebar-bg-title i {
+    margin-right: 4px;
+}
+
+.border-dashed ul li {
+    border-bottom: 2px dashed #ccc;
+}
+
+.menu-list {
+    font-size: 1.3rem;
+    padding: 5px 20px;
+}
+
+.menu-product {
+    background: var(--color-footer);
+}
+
+.menu-list ul li {
+    margin-bottom: 5px;
+}
+
+.menu-list i {
+    margin-right: 4px;
+}

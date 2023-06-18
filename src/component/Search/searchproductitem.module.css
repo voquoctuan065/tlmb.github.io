@@ -1,0 +1,15 @@
+.search-wrapper {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+}
+
+.search-wrapper a {
+    color: var(--color-subtext);
+    padding: 10px;
+    
+}
+
+.tlmb-search__hint:hover {
+    background-color: #fafafa;
+}
