@@ -38,14 +38,12 @@
     color: var(--color-text-white);
 }
 
-.Navbar__right-new:hover,
-.Navbar__right-help:hover,
+
 .Navbar__right-new a:hover,
 .Navbar__right-help a:hover,
 .Navbar__right-action a:hover,
 .Navbar__left a:hover {
-    box-shadow: 5px 20px -7px rgba(255, 66, 14, .9);
-    color: var(--color-primary)
+    color:  var(--color-popy);
 }
 
 .Navbar__right-help {
@@ -68,4 +66,36 @@
 .Navbar__right-regist{
     padding: 0 5px 0 20px;
     margin-left: 20px;
+}
+
+.Notify-box {
+    background: var(--color-text-white);
+    width: 40rem;
+    padding: 0 1px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    animation: scale-up-ver-top 0.1s cubic-bezier(0.895, 0.030, 0.685, 0.220) both;
+}
+
+.Notify-box::after {
+    content: "";
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: -18px;
+    border-width: 10px 17px;
+    border-style: solid;
+    border-color: transparent transparent var(--color-text-white) transparent;
+}
+
+@keyframes scale-up-ver-top {
+    0% {
+      transform: scaleY(0.4);
+      transform-origin: 100% 0%;
+    }
+    100% {
+      transform: scaleY(1);
+      transform-origin: 100% 0%;
+    }
 }

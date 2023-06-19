@@ -1,5 +1,8 @@
 import React from 'react';
+import Tippy from '@tippyjs/react/headless';
+
 import './navbar.css';
+import Notify from '~/component/Notify/Notify';
 
 const Navbar = () => {
     return (
@@ -21,14 +24,28 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className="Navbar__right">
-                    <div className="Navbar__right-new">
-                        <i class="fa-solid fa-bell"></i>
-                        <a href="/news">Thông báo</a>
-                    </div>
+                    <Tippy
+                        interactive = {true}
+                        placement="bottom-end"
+                        render={(attrs) => (
+                            <div className="Notify-box" tabIndex="-1" {...attrs}>
+                                <Notify />
+                            </div>
+                        )}
+                    >
+                        <div className="Navbar__right-new">
+                            <a href="/news">
+                                <i className="fa-solid fa-bell"></i>
+                                Thông báo
+                            </a>
+                        </div>
+                    </Tippy>
 
                     <div className="Navbar__right-help">
-                        <i class="fa-solid fa-circle-question"></i>
-                        <a href="/">Trợ giúp</a>
+                        <a href="/">
+                            <i className="fa-solid fa-circle-question"></i>
+                            Trợ giúp
+                        </a>
                     </div>
                     <div className="Navbar__right-action">
                         <a href="/register" className="Navbar__right-regist">

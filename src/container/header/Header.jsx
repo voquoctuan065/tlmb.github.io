@@ -41,9 +41,9 @@ const Header = () => {
                                         y2="1.96"
                                         gradientUnits="userSpaceOnUse"
                                     >
-                                        <stop offset="0" stop-color="#8c5000"></stop>
-                                        <stop offset="0.4" stop-color="#f5d97a"></stop>
-                                        <stop offset="1" stop-color="#7f4400"></stop>
+                                        <stop offset="0" stopColor="#8c5000"></stop>
+                                        <stop offset="0.4" stopColor="#f5d97a"></stop>
+                                        <stop offset="1" stopColor="#7f4400"></stop>
                                     </linearGradient>
                                     <linearGradient
                                         id="New_Gradient_Swatch_39-2"

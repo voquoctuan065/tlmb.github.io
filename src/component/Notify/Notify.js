@@ -8,8 +8,8 @@ function Notify() {
                 <div className="Notify-heading-message">Đăng nhập để xem thông báo</div>
             </div>
             <div className="Notify-footing">
-                <button tabindex="-1" className="Notify__login">Đăng nhập</button>
-                <button tabindex="-1" className="Notify__regis">Đăng ký</button>
+                <button tabIndex="-1" className="Notify__login">Đăng nhập</button>
+                <button tabIndex="-1" className="Notify__regis">Đăng ký</button>
             </div>
         </div>
     );

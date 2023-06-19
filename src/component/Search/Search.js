@@ -30,14 +30,14 @@ function Search() {
             <form
               role="search"
               className="tlmb-searchbar-input"
-              autocomplete="off"
+              autoComplete="off"
             >
               <input
                 aria-label="Đăng ký để nhận ưu đãi từ shop"
                 className="tlmb-searchbar-input__input"
-                maxlength="128"
+                maxLength="128"
                 placeholder="Đăng ký để nhận ưu đãi từ shop"
-                autocomplete="off"
+                autoComplete="off"
                 aria-autocomplete="list"
                 aria-controls="tlmb-searchbar-listbox"
                 aria-expanded="false"

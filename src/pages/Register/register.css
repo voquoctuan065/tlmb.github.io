@@ -1,0 +1,187 @@
+.register {
+    min-width: 1200px;
+}
+
+.regis-head {
+    width: 1200px;
+    height: 84px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.regis-wrapper,
+.regis-head,
+.regis-form,
+.form-choose,
+.regis-social__btn {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.regis-wrapper a {
+    margin-right: 0 !important;
+    margin-bottom: 15px !important;
+}
+
+.regis-wrapper h3 {
+    font-size: 2.4rem;
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+.regis-help {
+    margin-right: 15px;
+    font-size: 1.4rem;
+    color: var(--color-text-white);
+}
+
+.regis-help:hover {
+    color: hsla(0, 0%, 100%, .7);
+}
+
+.regis-form {
+    background: var(--color-subbg);
+    justify-content: center;
+    border-bottom: 4px solid #0652DD;
+}
+
+.form {
+    width: 500px;
+    min-height: 100px;
+    padding: 32px 24px;
+    text-align: center;
+    background: #fff;
+    border-radius: 2px;
+    margin: 24px;
+    align-self: center;
+    box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
+}
+
+.form .heading-form {
+    font-size: 2rem;
+}
+
+.spacer {
+    margin-top: 36px;
+}
+
+.form-group {
+    display: flex;
+    margin-bottom: 16px;
+    flex-direction: column;
+}
+
+.form-label {
+    font-weight: 700;
+    padding-bottom: 6px;
+    line-height: 1.8rem;
+    font-size: 1.4rem;
+}
+
+.form-label,
+.form-message {
+    text-align: left;
+}
+
+.form-control {
+    height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+    outline: none;
+    font-size: 1.4rem;
+}
+
+.form-message {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    padding: 4px 0 0;
+}
+
+.form-submit {
+    outline: none;
+    background-color: var(--color-popy);
+    padding: 16px 16px;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.form-submit:hover,
+.regis-fb:hover,
+.regis-gg:hover {
+    opacity: 0.85;
+}
+
+.form-choose {
+    padding: 14px 0;
+}
+
+.form-choose-lr {
+    height: 1px;
+    width: 100%;
+    background-color: #dbdbdb;
+    flex: 1;
+}
+
+.form-chose-title {
+    color: #ccc;
+    padding: 0 16px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.regis-social {
+    display: flex;
+    margin: 0 -5px;
+    flex-wrap: wrap;
+}
+
+.regis-social__btn,
+.regis-social {
+    justify-content: center;
+}
+
+.regis-social__btn {
+    flex: 1;
+    margin: 5px;
+    width: 100%;
+    height: 40px;
+    outline: none;
+    cursor: pointer;
+    padding: 0 2px;
+    font-size: 1.4rem;
+    border-radius: 2px;
+    box-sizing: border-box;
+    color: var(--color-text-white);
+    border: 1px solid rgba(0, 0, 0, .26);
+}
+
+.regis-social__icon {
+    font-size: 1.9rem;
+    margin-right: 5px;
+}
+
+.regis-span {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.regis-span__login {
+    color: var(--color-primary);
+}
+
+.regis-fb {
+    background: #1b74e4;
+}
+
+.regis-gg {
+    background: linear-gradient(90deg, rgba(228, 63, 53, 1) 0%, rgba(241, 182, 70, 1) 30%, rgba(78, 162, 78, 1) 64%, rgba(58, 123, 237, 1) 100%);
+}
