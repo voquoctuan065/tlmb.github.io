@@ -1,6 +1,30 @@
+import axios from 'axios';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Footer } from '~/container';
 
 function Login() {
+    const [inputs, setInputs] = useState({
+        email: '',
+        password: '',
+    });
+    const [err, setError] = useState(null);
+    const navigate = useNavigate();
+
+    const handleChange = (e) => {
+        setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await axios.post('/auth/login', inputs);
+            navigate('/');
+        } catch (err) {
+            setError(err.response.data);
+        }
+    };
+
     return (
         <div className="register">
             <div className="heading">
@@ -180,7 +204,7 @@ function Login() {
                     </div>
 
                     <div className="spacer"></div>
-
+                    {err && <p className="error-message">{err}</p>}
                     <div className="form-group">
                         <label htmlFor="email" className="form-label">
                             Email
@@ -191,6 +215,7 @@ function Login() {
                             type="text"
                             placeholder="VD: email@domain.com"
                             className="form-control"
+                            onChange={handleChange}
                         />
                         <span className="form-message"></span>
                     </div>
@@ -205,11 +230,14 @@ function Login() {
                             type="password"
                             placeholder="Nhập mật khẩu"
                             className="form-control"
+                            onChange={handleChange}
                         />
                         <span className="form-message"></span>
                     </div>
 
-                    <button className="form-submit">Đăng nhập</button>
+                    <button onClick={handleSubmit} className="form-submit">
+                        Đăng nhập
+                    </button>
 
                     <div className="regis-span">
                         <a href="/register" className="regis-span__login">
