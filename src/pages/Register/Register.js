@@ -1,7 +1,44 @@
+import axios from 'axios';
+import { useState } from 'react';
+import { useFormik } from 'formik';
 import { Footer } from '~/container';
+import { useNavigate } from 'react-router-dom';
+
 import './register.css';
+import { userSchema } from '~/schemas';
 
 function Register() {
+    const [err, setError] = useState(null);
+    const navigate = useNavigate();
+    const element = document.querySelector('.success-message');
+
+    async function onSubmit(values, actions) {
+        try {
+            await axios.post('http://localhost:8800/api/auth/register', values);
+
+            element.classList.add('show');
+            actions.resetForm();
+            await new Promise((resolve) => {
+                setTimeout(() => {
+                    navigate('/login');
+                }, 2000);
+            });
+        } catch (err) {
+            setError(err.response.data);
+        }
+    }
+
+    const { values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit } = useFormik({
+        initialValues: {
+            username: '',
+            email: '',
+            password: '',
+            password_confirmation: '',
+        },
+        validationSchema: userSchema,
+        onSubmit,
+    });
+
     return (
         <div className="register">
             <div className="heading">
@@ -170,23 +207,43 @@ function Register() {
             </div>
 
             <div className="regis-form">
-                <form action="" method="POST" className="form" id="form-1">
+                <form action="" method="POST" className="form" id="form-1" onSubmit={handleSubmit}>
                     <h3 className="heading-form">Thành viên đăng ký</h3>
-
+                    {err && <p className="error-message">{err}</p>}
+                    <p className="success-message">Đăng ký thành công!</p>
                     <div className="spacer"></div>
 
+                    <div className="form-group">
+                        <label htmlFor="username" className="form-label">
+                            Tên đầy đủ
+                        </label>
+                        <input
+                            onChange={handleChange}
+                            value={values.username}
+                            onBlur={handleBlur}
+                            id="username"
+                            name="username"
+                            type="text"
+                            placeholder="VD: Quốc Tuấn"
+                            className={errors.username && touched.username ? 'input-errors' : 'form-control'}
+                        />
+                        {errors.username && touched.username && <span className="form-message">{errors.username}</span>}
+                    </div>
                     <div className="form-group">
                         <label htmlFor="email" className="form-label">
                             Email
                         </label>
                         <input
+                            onChange={handleChange}
+                            value={values.email}
+                            onBlur={handleBlur}
                             id="email"
                             name="email"
                             type="text"
                             placeholder="VD: email@domain.com"
-                            className="form-control"
+                            className={errors.email && touched.email ? 'input-errors' : 'form-control'}
                         />
-                        <span className="form-message"></span>
+                        {errors.email && touched.email && <span className="form-message">{errors.email}</span>}
                     </div>
 
                     <div className="form-group">
@@ -194,13 +251,16 @@ function Register() {
                             Mật khẩu
                         </label>
                         <input
+                            onChange={handleChange}
+                            value={values.password}
+                            onBlur={handleBlur}
                             id="password"
                             name="password"
                             type="password"
                             placeholder="Nhập mật khẩu"
-                            className="form-control"
+                            className={errors.password && touched.password ? 'input-errors' : 'form-control'}
                         />
-                        <span className="form-message"></span>
+                        {errors.password && touched.password && <span className="form-message">{errors.password}</span>}
                     </div>
 
                     <div className="form-group">
@@ -208,21 +268,32 @@ function Register() {
                             Nhập lại mật khẩu
                         </label>
                         <input
+                            onChange={handleChange}
+                            value={values.password_confirmation}
+                            onBlur={handleBlur}
                             id="password_confirmation"
                             name="password_confirmation"
                             placeholder="Nhập lại mật khẩu"
                             type="password"
-                            className="form-control"
+                            className={
+                                errors.password_confirmation && touched.password_confirmation
+                                    ? 'input-errors'
+                                    : 'form-control'
+                            }
                         />
-                        <span className="form-message"></span>
+                        {errors.password_confirmation && touched.password_confirmation && (
+                            <span className="form-message">{errors.password_confirmation}</span>
+                        )}
                     </div>
 
-                    <button className="form-submit">Đăng ký</button>
+                    <button disabled={isSubmitting} className="form-submit" type="submit">
+                        Đăng ký
+                    </button>
 
-                    <div class="form-choose">
-                        <div class="form-choose-lr"></div>
-                        <span class="form-chose-title">hoặc</span>
-                        <div class="form-choose-lr"></div>
+                    <div className="form-choose">
+                        <div className="form-choose-lr"></div>
+                        <span className="form-chose-title">hoặc</span>
+                        <div className="form-choose-lr"></div>
                     </div>
 
                     <div className="regis-social">

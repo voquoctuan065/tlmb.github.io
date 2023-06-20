@@ -98,6 +98,7 @@
     font-size: 1.2rem;
     line-height: 1.6rem;
     padding: 4px 0 0;
+    color: red;
 }
 
 .form-submit {
@@ -181,4 +182,37 @@
 
 .regis-span__login {
     color: var(--color-primary);
+}
+
+.error-message {
+    margin: 15px 0 5px;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: red;
+}
+
+.success-message {
+    margin: 15px 0 5px;
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: green;
+    display: none;
+}
+
+input.input-errors,
+select.input-errors {
+    height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #fc8181;
+    border-radius: 3px;
+    outline: none;
+    font-size: 1.4rem;
+}
+
+button:disabled {
+    opacity: 0.35;
+}
+
+.show {
+    display: block !important;
 }

@@ -217,10 +217,10 @@ function Login() {
                         </a>
                     </div>
 
-                    <div class="form-choose">
-                        <div class="form-choose-lr"></div>
-                        <span class="form-chose-title">hoặc</span>
-                        <div class="form-choose-lr"></div>
+                    <div className="form-choose">
+                        <div className="form-choose-lr"></div>
+                        <span className="form-chose-title">hoặc</span>
+                        <div className="form-choose-lr"></div>
                     </div>
 
                     <div className="regis-social">
