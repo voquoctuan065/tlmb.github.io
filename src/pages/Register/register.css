@@ -159,13 +159,18 @@
     font-size: 1.4rem;
     border-radius: 2px;
     box-sizing: border-box;
-    color: var(--color-text-white);
+    color: #000;
     border: 1px solid rgba(0, 0, 0, .26);
 }
 
 .regis-social__icon {
     font-size: 1.9rem;
     margin-right: 5px;
+    margin-top: 5px;
+}
+
+.regis-social__icon i {
+    color: rgb(38, 120, 243);
 }
 
 .regis-span {
@@ -176,12 +181,4 @@
 
 .regis-span__login {
     color: var(--color-primary);
-}
-
-.regis-fb {
-    background: #1b74e4;
-}
-
-.regis-gg {
-    background: linear-gradient(90deg, rgba(228, 63, 53, 1) 0%, rgba(241, 182, 70, 1) 30%, rgba(78, 162, 78, 1) 64%, rgba(58, 123, 237, 1) 100%);
 }
