@@ -168,24 +168,25 @@ const Header = () => {
                     <div>
                         <Search />
                     </div>
-                    <Tippy
-                        interactive={true}
-                        placement="bottom-start"
-                        render={(attrs) => (
-                            <div className="Cart-drawer" tabIndex="-1" {...attrs}>
-                                <CartDrawer />
-                            </div>
-                        )}
-                    >
-                        <div className="header-with-search__cart-wrapper" id="Cart_Oder">
+
+                    <div className="header-with-search__cart-wrapper" id="Cart_Oder">
+                        <Tippy
+                            interactive={true}
+                            placement="bottom-end"
+                            render={(attrs) => (
+                                <div className="Cart-drawer" tabIndex="-1" {...attrs}>
+                                    <CartDrawer />
+                                </div>
+                            )}
+                        >
                             <div className="header__cart-wrap">
                                 <a href="/" id="cart_drawer_target_id">
                                     <i className="header__cart-icon fas fa-shopping-cart"></i>
                                 </a>
                                 {/* <span className="header__cart-notice">3</span> */}
                             </div>
-                        </div>
-                    </Tippy>
+                        </Tippy>
+                    </div>
                 </div>
             </div>
         </div>

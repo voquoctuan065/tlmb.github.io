@@ -39,3 +39,11 @@ li {
     border-radius: 3px;
     border: none;
 }
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}

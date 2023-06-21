@@ -149,7 +149,7 @@
     padding: 0 1px;
     border-radius: 2px;
     border: 1px solid #ccc;
-    transform: translate(-30px, -16px);
+    transform: translateX(18px);
     cursor: pointer;
 }
 

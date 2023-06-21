@@ -15,7 +15,8 @@
     margin: 0 auto;
 }
 
-.Navbar__left, .Navbar__right {
+.Navbar__left,
+.Navbar__right {
     display: flex;
     align-items: center;
 }
@@ -34,7 +35,8 @@
     color: var(--color-text-white);
 }
 
-.Navbar__right-new a, .Navbar__right-action a {
+.Navbar__right-new a,
+.Navbar__right-action a {
     color: var(--color-text-white);
 }
 
@@ -42,8 +44,25 @@
 .Navbar__right-new a:hover,
 .Navbar__right-help a:hover,
 .Navbar__right-action a:hover,
-.Navbar__left a:hover {
-    color:  var(--color-popy);
+.Navbar__left a:hover,
+.Navbar__right-user:hover,
+.navbar__link--account__container:hover {
+    color: var(--color-popy);
+}
+
+.navbar__link--account__container {
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.navbar__username {
+    font-size: 1.3rem;
+}
+
+.Navbar__right-user {
+    font-size: 1.4rem;
+    margin-left: 20px;
+    cursor: pointer;
 }
 
 .Navbar__right-help {
@@ -63,22 +82,56 @@
     padding-left: 5px;
 }
 
-.Navbar__right-regist{
+.Navbar__right-regist {
     padding: 0 5px 0 20px;
     margin-left: 20px;
 }
 
+.user-box {
+    box-shadow: 0 0.1rem 5rem 0 rgba(0, 0, 0, .2);
+    width: 15rem;
+    border-top: 0;
+    animation: scale-up-ver-top 0.1s cubic-bezier(0.895, 0.030, 0.685, 0.220) both;
+}
+
+.navbar-account-drawer__button {
+    height: 4rem;
+    width: 15rem;
+    padding-left: 1.5rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: rgba(0, 0, 0, .87);
+}
+
+.reset-button-style {
+    background-color: initial;
+    border: 0;
+    cursor: pointer;
+}
+
+.navbar-account-drawer__button:hover {
+    background-color: #fafafa;
+    color: #00bfa5;
+}
+
+.user-box,
 .Notify-box {
     background: var(--color-text-white);
-    width: 40rem;
-    padding: 0 1px;
     border-radius: 2px;
     border: 1px solid #ccc;
+}
+
+.Notify-box {
+    width: 40rem;
+    padding: 0 1px;
     cursor: pointer;
     animation: scale-up-ver-top 0.1s cubic-bezier(0.895, 0.030, 0.685, 0.220) both;
 }
 
-.Notify-box::after {
+.Notify-box::after,
+.user-box::before {
     content: "";
     cursor: pointer;
     position: absolute;
@@ -91,11 +144,12 @@
 
 @keyframes scale-up-ver-top {
     0% {
-      transform: scaleY(0.4);
-      transform-origin: 100% 0%;
+        transform: scaleY(0.4);
+        transform-origin: 100% 0%;
     }
+
     100% {
-      transform: scaleY(1);
-      transform-origin: 100% 0%;
+        transform: scaleY(1);
+        transform-origin: 100% 0%;
     }
 }

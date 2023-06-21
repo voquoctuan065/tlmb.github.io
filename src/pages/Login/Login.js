@@ -1,7 +1,7 @@
-import axios from 'axios';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Footer } from '~/container';
+import Context from '~/store/Context';
 
 function Login() {
     const [inputs, setInputs] = useState({
@@ -10,6 +10,7 @@ function Login() {
     });
     const [err, setError] = useState(null);
     const navigate = useNavigate();
+    const {login} = useContext(Context);
 
     const handleChange = (e) => {
         setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -18,7 +19,7 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('/auth/login', inputs);
+            login(inputs);
             navigate('/');
         } catch (err) {
             setError(err.response.data);
@@ -213,6 +214,7 @@ function Login() {
                             id="email"
                             name="email"
                             type="text"
+                            defaultValue=""
                             placeholder="VD: email@domain.com"
                             className="form-control"
                             onChange={handleChange}
@@ -228,6 +230,7 @@ function Login() {
                             id="password"
                             name="password"
                             type="password"
+                            defaultValue=""
                             placeholder="Nhập mật khẩu"
                             className="form-control"
                             onChange={handleChange}

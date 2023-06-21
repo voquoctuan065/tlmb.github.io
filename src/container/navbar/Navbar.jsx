@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Tippy from '@tippyjs/react/headless';
 
 import './navbar.css';
 import Notify from '~/component/Notify/Notify';
+import Context from '~/store/Context';
 
 const Navbar = () => {
+    const { currentUser, logout } = useContext(Context);
+
     return (
         <div className="navbar-container">
             <div className="Navbar-wrapper Container-wrapper">
@@ -25,7 +28,7 @@ const Navbar = () => {
                 </div>
                 <div className="Navbar__right">
                     <Tippy
-                        interactive = {true}
+                        interactive={true}
                         placement="bottom-end"
                         render={(attrs) => (
                             <div className="Notify-box" tabIndex="-1" {...attrs}>
@@ -47,14 +50,49 @@ const Navbar = () => {
                             Trợ giúp
                         </a>
                     </div>
-                    <div className="Navbar__right-action">
-                        <a href="/register" className="Navbar__right-regist">
-                            Đăng ký
-                        </a>
-                        <a href="/login" className="Navbar__right-login">
-                            Đăng nhập
-                        </a>
-                    </div>
+
+                    {/*  */}
+                    {currentUser ? (
+                        <Tippy
+                            interactive={true}
+                            placement="bottom-end"
+                            render={(attrs) => (
+                                <div className="user-box" tabIndex="-1" {...attrs}>
+                                    <a className="navbar-account-drawer__button navbar-user-link" href="/user/account">
+                                        <span>Tài khoản của tôi</span>
+                                    </a>
+                                    <a
+                                        className="navbar-account-drawer__button navbar-user-link"
+                                        href="/user/purchase/"
+                                    >
+                                        <span>Đơn Mua</span>
+                                    </a>
+                                    <button
+                                        onClick={logout}
+                                        className="navbar-account-drawer__button reset-button-style"
+                                    >
+                                        Đăng xuất
+                                    </button>
+                                </div>
+                            )}
+                        >
+                            <div className="navbar__link--account__container">
+                                <div className="navbar__username">{currentUser.username}</div>
+                            </div>
+                        </Tippy>
+                    ) : (
+                        <div className="Navbar__right-action">
+                            <a href="/register" className="Navbar__right-regist">
+                                Đăng ký
+                            </a>
+                            <a href="/login" className="Navbar__right-login">
+                                Đăng nhập
+                            </a>
+                        </div>
+                    )}
+                    {/*  */}
+
+                    {/*  */}
                 </div>
             </div>
         </div>
