@@ -1,3 +1,6 @@
+.sidebar {
+    padding: 0 20px 0 0 !important
+}
 
 .sidebar-bg {
     background: var(--color-text-white);
@@ -14,7 +17,7 @@
     padding: 10px 20px;
 }
 
-h3, .sidebar-bg-title i {
+.sidebar-bg-title h3 {
     font-size: 1.5rem;
 }
 
@@ -22,13 +25,18 @@ h3, .sidebar-bg-title i {
     margin-right: 4px;
 }
 
-.border-dashed ul li {
+.border-dashed {
     border-bottom: 2px dashed #ccc;
 }
 
 .menu-list {
     font-size: 1.3rem;
-    padding: 5px 20px;
+    padding: 10px 5px 5px;
+}
+
+.menu-list ul {
+    margin-bottom: 0;
+    padding-right: 2rem;
 }
 
 .menu-product {

@@ -13,13 +13,14 @@
     right: 0;
     transform: translateZ(0);
     z-index: 100;
-} 
+}
 
 .footing {
     background: var(--color-footer);
 }
 
-.body-container, .footing {
+.body-container,
+.footing {
     min-width: 1200px;
 }
 
@@ -27,18 +28,6 @@
     background: var(--color-subbg);
     border-bottom: 4px solid #0652DD;
     margin-top: 122px;
-}
-
-.body-wrapper {
-    width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-}
-
-.body-wrapper__content {
-    display: flex;
-    flex-direction: row;
 }
 
 .wide-nave-wrapper {

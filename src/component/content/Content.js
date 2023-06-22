@@ -1,429 +1,500 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Sidebar } from '~/container';
 import './content.css';
 
 function Content() {
     return (
-        <div className="content-container">
-            <ul className="product-list">
-                <li className="product-list__item product-item" pid="37740144">
-                    <div className="product2">
-                        <a
-                            className="product2__imgwrap"
-                            href="/laptop-asus-gaming-rog-strix-g15-g513ih-hn015w-p37740144.html"
-                        >
-                            <img
-                                className="product1__img lazyautosizes lazyloaded"
-                                data-sizes="auto"
-                                src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/42/250625/samsung-galaxy-z-fold4-kem-256gb-600x600.jpg"
-                                data-src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/42/250625/samsung-galaxy-z-fold4-kem-256gb-600x600.jpg"
-                                alt="Laptop Asus Gaming Rog Strix G15 G513IH HN015W"
-                                sizes="234px"
-                            />
-                        </a>
-                        <h6 className="product2__name">
-                            <a
-                                href="/laptop-asus-gaming-rog-strix-g15-g513ih-hn015w-p37740144.html"
-                                className="max-line-2"
-                            >
-                                Samsung Galaxy Z Fold4 5G 256GB
-                            </a>
-                        </h6>
-                        <div className="price__p">
-                            <p className="product2__price">31.490.000₫</p>
-                        </div>
-                        <div className="wrap-add-cart d-md-flex">
-                            <div className="quantity">
-                                <a className="btn-minusProduct" href="/">
-                                    <i className="fa fa-minus" aria-hidden="true"></i>
-                                </a>
-                                <input
-                                    className="quantityProduct"
-                                    defaultValue="1"
-                                    type="number"
-                                    min="1"
-                                    data-id="37740144"
-                                    max="100"
-                                    disabled=""
-                                />
-                                <a className="btn-plusProduct" href="/">
-                                    <i className="fa fa-plus" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                            <a
-                                title="Chọn mua sản phẩm"
-                                href="/laptop-asus-gaming-rog-strix-g15-g513ih-hn015w-p37740144.html"
-                                data-id="37740144"
-                                className="btn-buyNow"
-                            >
-                                <i className="fa fa-cart-plus" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li className="product-list__item product-item" pid="37737835">
-                    <div className="product2">
-                        <a
-                            className="product2__imgwrap"
-                            href="/laptop-do-hoa-conceptd-7-ezel-cc715717940-p37737835.html"
-                        >
-                            <img
-                                className="product1__img lazyautosizes lazyloaded"
-                                data-sizes="auto"
-                                src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/54/253802/bluetooth-airpods-pro-magsafe-charge-apple-mlwk3-thumb-600x600.jpeg"
-                                data-src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/54/253802/bluetooth-airpods-pro-magsafe-charge-apple-mlwk3-thumb-600x600.jpeg"
-                                alt="Tai nghe Bluetooth AirPods Pro MagSafe Charge Apple MLWK3"
-                                sizes="234px"
-                            />
-                        </a>
-                        <h6 className="product2__name">
-                            <a href="/laptop-do-hoa-conceptd-7-ezel-cc715717940-p37737835.html" className="max-line-2">
-                                Tai nghe Bluetooth AirPods Pro MagSafe Charge Apple MLWK3
-                            </a>
-                        </h6>
-                        <div className="price__p">
-                            <p className="product2__price"> 4.690.000₫</p>
-                        </div>
-                        <div className="wrap-add-cart d-md-flex">
-                            <div className="quantity">
-                                <a className="btn-minusProduct" href="/">
-                                    <i className="fa fa-minus" aria-hidden="true"></i>
-                                </a>
-                                <input
-                                    className="quantityProduct"
-                                    defaultValue="1"
-                                    type="number"
-                                    min="1"
-                                    data-id="37737835"
-                                    max="100"
-                                    disabled=""
-                                />
-                                <a className="btn-plusProduct" href="/">
-                                    <i className="fa fa-plus" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                            <a
-                                title="Chọn mua sản phẩm"
-                                href="/laptop-do-hoa-conceptd-7-ezel-cc715717940-p37737835.html"
-                                data-id="37737835"
-                                className="btn-buyNow"
-                            >
-                                <i className="fa fa-cart-plus" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li className="product-list__item product-item" pid="37729164">
-                    <div className="product2">
-                        <span className="product-sale">
-                            <span className="product-sale__small">off</span>
-                            <span>52%</span>
-                        </span>
-                        <a className="product2__imgwrap" href="/microsoft-surface-pro-7-p37729164.html">
-                            <img
-                                className="product1__img lazyautosizes lazyloaded"
-                                data-sizes="auto"
-                                src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/9499/227067/adapter-sac-34a-dual-xmobile-ds730-db-thumb-01-600x600.jpg"
-                                data-src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/9499/227067/adapter-sac-34a-dual-xmobile-ds730-db-thumb-01-600x600.jpg"
-                                alt="Microsoft Surface Pro 7"
-                                sizes="234px"
-                            />
-                        </a>
-                        <h6 className="product2__name">
-                            <a href="/microsoft-surface-pro-7-p37729164.html" className="max-line-2">
-                                Sạc 2 cổng Xmobile DS730-DB
-                            </a>
-                        </h6>
-                        <div className="price__p">
-                            <p className="product2__price">120,000 ₫</p>
-                            <p className="product2__oldprice">24,000,000 ₫</p>
-                        </div>
-                        <div className="wrap-add-cart d-md-flex">
-                            <div className="quantity">
-                                <a className="btn-minusProduct" href="/">
-                                    <i className="fa fa-minus" aria-hidden="true"></i>
-                                </a>
-                                <input
-                                    className="quantityProduct"
-                                    defaultValue="1"
-                                    type="number"
-                                    min="1"
-                                    data-id="37729164"
-                                    max="100"
-                                    disabled=""
-                                />
-                                <a className="btn-plusProduct" href="/">
-                                    <i className="fa fa-plus" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                            <a
-                                title="Chọn mua sản phẩm"
-                                href="/microsoft-surface-pro-7-p37729164.html"
-                                data-id="37729164"
-                                className="btn-buyNow"
-                            >
-                                <i className="fa fa-cart-plus" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </li>
+        <div className="container content-container">
+            <div className="grid wide">
+                <div className="row sm-gutter product-content">
+                    <Sidebar />
 
-                <li className="product-list__item product-item" pid="37729164">
-                    <div className="product2">
-                        <span className="product-sale">
-                            <span className="product-sale__small">off</span>
-                            <span>50%</span>
-                        </span>
-                        <a className="product2__imgwrap" href="/microsoft-surface-pro-7-p37729164.html">
-                            <img
-                                className="product1__img lazyautosizes lazyloaded"
-                                data-sizes="auto"
-                                src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/57/245254/pin-polymer-10000mah-type-c-ava-pb100s-thumb-600x600.jpeg"
-                                data-src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/Products/Images/57/245254/pin-polymer-10000mah-type-c-ava-pb100s-thumb-600x600.jpeg"
-                                alt="Microsoft Surface Pro 7"
-                                sizes="234px"
-                            />
-                        </a>
-                        <h6 className="product2__name">
-                            <a href="/microsoft-surface-pro-7-p37729164.html" className="max-line-2">
-                                AVA+ 10W PB100S
-                            </a>
-                        </h6>
-                        <div className="price__p">
-                            <p className="product2__price">300,000 ₫</p>
-                            <p className="product2__oldprice">600,000 ₫</p>
-                        </div>
-                        <div className="wrap-add-cart d-md-flex">
-                            <div className="quantity">
-                                <a className="btn-minusProduct" href="/">
-                                    <i className="fa fa-minus" aria-hidden="true"></i>
-                                </a>
-                                <input
-                                    className="quantityProduct"
-                                    defaultValue="1"
-                                    type="number"
-                                    min="1"
-                                    data-id="37729164"
-                                    max="100"
-                                    disabled=""
-                                />
-                                <a className="btn-plusProduct" href="/">
-                                    <i className="fa fa-plus" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                            <a
-                                title="Chọn mua sản phẩm"
-                                href="/microsoft-surface-pro-7-p37729164.html"
-                                data-id="37729164"
-                                className="btn-buyNow"
-                            >
-                                <i className="fa fa-cart-plus" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </li>
+                    <div className="col-9">
+                        <div className="home-filter  hide-on-mobile-tablet">
+                            <span className="home-filter__label">Sắp xếp theo</span>
+                            <button className="home-filter__btn btn">Phổ biến</button>
+                            <button className="home-filter__btn btn btn--primary">Mới nhất</button>
+                            <button className="home-filter__btn  btn">Bán chạy</button>
 
-                <li className="product-list__item product-item" pid="37729409">
-                    <div className="product2">
-                        <a className="product2__imgwrap" href="/surface-laptop-go-p37729409.html">
-                            <img
-                                className="product1__img lazyautosizes lazyloaded"
-                                data-sizes="auto"
-                                src="https://pos.nvncdn.net/4fa0a7-96878/ps/20220308_3vrHUFe0ISVWaessde8Och9Y.png"
-                                data-src="https://pos.nvncdn.net/4fa0a7-96878/ps/20220308_3vrHUFe0ISVWaessde8Och9Y.png"
-                                alt="Surface Laptop Go"
-                                sizes="234px"
-                            />
-                        </a>
-                        <h6 className="product2__name">
-                            <a href="/surface-laptop-go-p37729409.html" className="max-line-2">
-                                Surface Laptop Go
-                            </a>
-                        </h6>
-                        <div className="price__p">
-                            <p className="product2__price">17,999,000 ₫</p>
-                        </div>
-                        <div className="wrap-add-cart d-md-flex">
-                            <div className="quantity">
-                                <a className="btn-minusProduct" href="/">
-                                    <i className="fa fa-minus" aria-hidden="true"></i>
-                                </a>
-                                <input
-                                    className="quantityProduct"
-                                    defaultValue="1"
-                                    type="number"
-                                    min="1"
-                                    data-id="37729409"
-                                    max="100"
-                                    disabled=""
-                                />
-                                <a className="btn-plusProduct" href="/">
-                                    <i className="fa fa-plus" aria-hidden="true"></i>
-                                </a>
+                            <div className="select-input">
+                                <span className="select-input__lable">Giá</span>
+                                <i className="select-input__icon fas fa-angle-down"></i>
+                                {/* <ul className="select-input__list">
+                                    <li className="select-input__item">
+                                        <button className="select-input__link">Giá: Thấp đến cao</button>
+                                    </li>
+                                    <li className="select-input__item">
+                                        <button className="select-input__link">Giá: Cao đến thấp</button>
+                                    </li>
+                                </ul> */}
                             </div>
-                            <a
-                                title="Chọn mua sản phẩm"
-                                href="/surface-laptop-go-p37729409.html"
-                                data-id="37729409"
-                                className="btn-buyNow"
-                            >
-                                <i className="fa fa-cart-plus" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li className="product-list__item product-item" pid="37729164">
-                    <div className="product2">
-                        <span className="product-sale">
-                            <span className="product-sale__small">off</span>
-                            <span>14%</span>
-                        </span>
-                        <a className="product2__imgwrap" href="/microsoft-surface-pro-7-p37729164.html">
-                            <img
-                                className="product1__img lazyautosizes lazyloaded"
-                                data-sizes="auto"
-                                src="https://pos.nvncdn.net/4fa0a7-96878/ps/20220308_zmh5GxxPkybWPQtQw1qPkxvx.png"
-                                data-src="https://pos.nvncdn.net/4fa0a7-96878/ps/20220308_zmh5GxxPkybWPQtQw1qPkxvx.png"
-                                alt="Microsoft Surface Pro 7"
-                                sizes="234px"
-                            />
-                        </a>
-                        <h6 className="product2__name">
-                            <a href="/microsoft-surface-pro-7-p37729164.html" className="max-line-2">
-                                Microsoft Surface Pro 7
-                            </a>
-                        </h6>
-                        <div className="price__p">
-                            <p className="product2__price">20,599,000 ₫</p>
-                            <p className="product2__oldprice">24,000,000 ₫</p>
-                        </div>
-                        <div className="wrap-add-cart d-md-flex">
-                            <div className="quantity">
-                                <a className="btn-minusProduct" href="/">
-                                    <i className="fa fa-minus" aria-hidden="true"></i>
-                                </a>
-                                <input
-                                    className="quantityProduct"
-                                    defaultValue="1"
-                                    type="number"
-                                    min="1"
-                                    data-id="37729164"
-                                    max="100"
-                                    disabled=""
-                                />
-                                <a className="btn-plusProduct" href="/">
-                                    <i className="fa fa-plus" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                            <a
-                                title="Chọn mua sản phẩm"
-                                href="/microsoft-surface-pro-7-p37729164.html"
-                                data-id="37729164"
-                                className="btn-buyNow"
-                            >
-                                <i className="fa fa-cart-plus" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </li>
 
-                <li className="product-list__item product-item" pid="37737671">
-                    <div className="product2">
-                        <a className="product2__imgwrap" href="/laptop-dell-vostro-3405-p37737671.html">
-                            <img
-                                className="product1__img lazyautosizes lazyloaded"
-                                data-sizes="auto"
-                                src="https://pos.nvncdn.net/4fa0a7-96878/ps/20220309_dGBsVqA1CZA3YXAqvVxiehd5.png"
-                                data-src="https://pos.nvncdn.net/4fa0a7-96878/ps/20220309_dGBsVqA1CZA3YXAqvVxiehd5.png"
-                                alt="Laptop Dell Vostro 3405"
-                                sizes="234px"
-                            />
-                        </a>
-                        <h6 className="product2__name">
-                            <a href="/laptop-dell-vostro-3405-p37737671.html" className="max-line-2">
-                                Laptop Dell Vostro 3405
-                            </a>
-                        </h6>
-                        <div className="price__p">
-                            <p className="product2__price">14,599,000 ₫</p>
-                        </div>
-                        <div className="wrap-add-cart d-md-flex">
-                            <div className="quantity">
-                                <a className="btn-minusProduct" href="/">
-                                    <i className="fa fa-minus" aria-hidden="true"></i>
-                                </a>
-                                <input
-                                    className="quantityProduct"
-                                    defaultValue="1"
-                                    type="number"
-                                    min="1"
-                                    data-id="37737671"
-                                    max="100"
-                                    disabled=""
-                                />
-                                <a className="btn-plusProduct" href="/">
-                                    <i className="fa fa-plus" aria-hidden="true"></i>
-                                </a>
+                            <div className="home-filter__page">
+                                <span className="home-filter__page-num">
+                                    <span className="home-filter__page-current">1</span>/14
+                                </span>
+                                <div className="home-filter__page-control">
+                                    <button href="" className="home-filter__page-btn home-filter__page-btn--disable">
+                                        <i className="home-filter__page-icon fas fa-angle-left"></i>
+                                    </button>
+                                    <button href="" className="home-filter__page-btn">
+                                        <i className="home-filter__page-icon fas fa-angle-right"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <a
-                                title="Chọn mua sản phẩm"
-                                href="/laptop-dell-vostro-3405-p37737671.html"
-                                data-id="37737671"
-                                className="btn-buyNow"
-                            >
-                                <i className="fa fa-cart-plus" aria-hidden="true"></i>
-                            </a>
+                        </div>
+
+                        {/* <!-- Product item 1--> */}
+                        <div className="home-product">
+                            <div className="row">
+                                <div className="col-3">
+                                    <div className="home-product-item">
+                                        <a href="/">
+                                            <div
+                                                className="home-product-item__img"
+                                                style={{
+                                                    backgroundImage:
+                                                        'url(' +
+                                                        'https://cf.shopee.vn/file/0a82d7cc998f02e028d985e57f277640_tn' +
+                                                        ')',
+                                                }}
+                                            ></div>
+                                            <h4 className="home-product-item__name">
+                                                Switch Gateron Milky (KS3X1) - Milky Yellow và Milky Black - Gateron
+                                                KS3X1 - Switch dùng cho bàn phím cơ
+                                            </h4>
+                                        </a>
+                                        <div className="home-product-item__price">
+                                            <span className="home-product-item__price-old">1.200.000đ</span>
+                                            <span className="home-product-item__price-current">999.000đ</span>
+                                        </div>
+                                        <div className="home-product-item__favourite">
+                                            <i className="fas fa-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div className="home-product-item__sale-off">
+                                            <span className="home-product-item__sale-of-lable">GIẢM</span>
+                                            <span className="home-product-item__sale-of-percent">43%</span>
+                                        </div>
+
+                                        <div className="wrap-add-cart d-md-flex">
+                                            <div className="quantity">
+                                                <button className="btn-minusProduct">
+                                                    <i className="fa fa-minus" aria-hidden="true"></i>
+                                                </button>
+                                                <input
+                                                    className="quantityProduct"
+                                                    defaultValue="1"
+                                                    type="number"
+                                                    min="1"
+                                                    data-id="37741045"
+                                                    max="100"
+                                                    disabled=""
+                                                />
+                                                <button className="btn-plusProduct">
+                                                    <i className="fa fa-plus" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                            <button className="btn-buyNow ">
+                                                <i className="fa fa-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* <!-- Product item 2 --> */}
+                                <div className="col-3">
+                                    <div className="home-product-item">
+                                        <a href="/">
+                                            <div
+                                                className="home-product-item__img"
+                                                style={{
+                                                    backgroundImage:
+                                                        'url(' +
+                                                        'https://cf.shopee.vn/file/0a82d7cc998f02e028d985e57f277640_tn' +
+                                                        ')',
+                                                }}
+                                            ></div>
+                                            <h4 className="home-product-item__name">
+                                                Tấm lót chuột chất liệu da PU chống nước chất lượng cao cho máy tính
+                                                A027
+                                            </h4>
+                                        </a>
+                                        <div className="home-product-item__price">
+                                            <span className="home-product-item__price-old">2.230.992đ</span>
+                                            <span className="home-product-item__price-current">1.150.000đ</span>
+                                        </div>
+                                        <div className="home-product-item__favourite">
+                                            <i className="fas fa-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div className="home-product-item__sale-off">
+                                            <span className="home-product-item__sale-of-lable">GIẢM</span>
+                                            <span className="home-product-item__sale-of-percent">38%</span>
+                                        </div>
+
+                                        <div className="wrap-add-cart d-md-flex">
+                                            <div className="quantity">
+                                                <button className="btn-minusProduct">
+                                                    <i className="fa fa-minus" aria-hidden="true"></i>
+                                                </button>
+                                                <input
+                                                    className="quantityProduct"
+                                                    defaultValue="1"
+                                                    type="number"
+                                                    min="1"
+                                                    data-id="37741045"
+                                                    max="100"
+                                                    disabled=""
+                                                />
+                                                <button className="btn-plusProduct">
+                                                    <i className="fa fa-plus" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                            <button className="btn-buyNow ">
+                                                <i className="fa fa-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* <!-- Product item 3 --> */}
+                                <div className="col-3">
+                                    <div className="home-product-item">
+                                        <div
+                                            className="home-product-item__img"
+                                            style={{
+                                                backgroundImage:
+                                                    'url(' +
+                                                    'https://cf.shopee.vn/file/0a82d7cc998f02e028d985e57f277640_tn' +
+                                                    ')',
+                                            }}
+                                        ></div>
+                                        <h4 className="home-product-item__name">
+                                            Bếp nướng dã ngoại ngoài trời, bếp nướng sân vườn,bếp nướng BBQ 3 chân, bếp
+                                            nướng BBQ 3 chân Lanmand
+                                        </h4>
+                                        <div className="home-product-item__price">
+                                            <span className="home-product-item__price-old">1.580.000đ</span>
+                                            <span className="home-product-item__price-current">1.343.000đ</span>
+                                        </div>
+
+                                        <div className="home-product-item__favourite">
+                                            <i className="fas fa-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div className="home-product-item__sale-off">
+                                            <span className="home-product-item__sale-of-lable">GIẢM</span>
+                                            <span className="home-product-item__sale-of-percent">15%</span>
+                                        </div>
+
+                                        <div className="wrap-add-cart d-md-flex">
+                                            <div className="quantity">
+                                                <button className="btn-minusProduct">
+                                                    <i className="fa fa-minus" aria-hidden="true"></i>
+                                                </button>
+                                                <input
+                                                    className="quantityProduct"
+                                                    defaultValue="1"
+                                                    type="number"
+                                                    min="1"
+                                                    data-id="37741045"
+                                                    max="100"
+                                                    disabled=""
+                                                />
+                                                <button className="btn-plusProduct">
+                                                    <i className="fa fa-plus" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                            <button className="btn-buyNow ">
+                                                <i className="fa fa-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* <!-- Product item 4 --> */}
+                                <div className="col-3">
+                                    <div className="home-product-item">
+                                        <a href="/">
+                                            <div
+                                                className="home-product-item__img"
+                                                style={{
+                                                    backgroundImage:
+                                                        'url(' +
+                                                        'https://cf.shopee.vn/file/0a82d7cc998f02e028d985e57f277640_tn' +
+                                                        ')',
+                                                }}
+                                            ></div>
+                                            <h4 className="home-product-item__name">
+                                                Dây chuyền Mặt Hình Bướm Đính Đá Thời Trang Độc Đáo
+                                            </h4>
+                                        </a>
+                                        <div className="home-product-item__price">
+                                            <span className="home-product-item__price-old">2.320.000đ</span>
+                                            <span className="home-product-item__price-current">1.912.000đ</span>
+                                        </div>
+
+                                        <div className="home-product-item__favourite">
+                                            <i className="fas fa-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div className="home-product-item__sale-off">
+                                            <span className="home-product-item__sale-of-lable">GIẢM</span>
+                                            <span className="home-product-item__sale-of-percent">40%</span>
+                                        </div>
+                                        <div className="wrap-add-cart d-md-flex">
+                                            <div className="quantity">
+                                                <button className="btn-minusProduct">
+                                                    <i className="fa fa-minus" aria-hidden="true"></i>
+                                                </button>
+                                                <input
+                                                    className="quantityProduct"
+                                                    defaultValue="1"
+                                                    type="number"
+                                                    min="1"
+                                                    data-id="37741045"
+                                                    max="100"
+                                                    disabled=""
+                                                />
+                                                <button className="btn-plusProduct">
+                                                    <i className="fa fa-plus" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                            <button className="btn-buyNow ">
+                                                <i className="fa fa-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* <!-- Product item 5 --> */}
+                                <div className="col-3">
+                                    <div className="home-product-item">
+                                        <a href="/">
+                                            <div
+                                                className="home-product-item__img"
+                                                style={{
+                                                    backgroundImage:
+                                                        'url(' +
+                                                        'https://cf.shopee.vn/file/0a82d7cc998f02e028d985e57f277640_tn' +
+                                                        ')',
+                                                }}
+                                            ></div>
+                                            <h4 className="home-product-item__name">
+                                                Điện thoại iphone 5 32/16gb Qte chính hãng - tặng kèm phụ kiện - bảo
+                                                hành toàn quốc
+                                            </h4>
+                                        </a>
+                                        <div className="home-product-item__price">
+                                            <span className="home-product-item__price-old">1.200.000đ</span>
+                                            <span className="home-product-item__price-current">750.000đ</span>
+                                        </div>
+
+                                        <div className="home-product-item__favourite">
+                                            <i className="fas fa-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div className="home-product-item__sale-off">
+                                            <span className="home-product-item__sale-of-lable">GIẢM</span>
+                                            <span className="home-product-item__sale-of-percent">38%</span>
+                                        </div>
+
+                                        <div className="wrap-add-cart d-md-flex">
+                                            <div className="quantity">
+                                                <button className="btn-minusProduct">
+                                                    <i className="fa fa-minus" aria-hidden="true"></i>
+                                                </button>
+                                                <input
+                                                    className="quantityProduct"
+                                                    defaultValue="1"
+                                                    type="number"
+                                                    min="1"
+                                                    data-id="37741045"
+                                                    max="100"
+                                                    disabled=""
+                                                />
+                                                <button className="btn-plusProduct">
+                                                    <i className="fa fa-plus" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                            <button className="btn-buyNow ">
+                                                <i className="fa fa-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* <!-- Product item 6--> */}
+                                <div className="col-3">
+                                    <div className="home-product-item">
+                                        <a href="/">
+                                            <div
+                                                className="home-product-item__img"
+                                                style={{
+                                                    backgroundImage:
+                                                        'url(' +
+                                                        'https://cf.shopee.vn/file/0a82d7cc998f02e028d985e57f277640_tn' +
+                                                        ')',
+                                                }}
+                                            ></div>
+                                            <h4 className="home-product-item__name">
+                                                Switch Gateron Milky (KS3X1) - Milky Yellow và Milky Black - Gateron
+                                                KS3X1 - Switch dùng cho bàn phím cơ
+                                            </h4>
+                                        </a>
+                                        <div className="home-product-item__price">
+                                            <span className="home-product-item__price-old">1.200.000đ</span>
+                                            <span className="home-product-item__price-current">999.000đ</span>
+                                        </div>
+
+                                        <div className="home-product-item__favourite">
+                                            <i className="fas fa-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div className="home-product-item__sale-off">
+                                            <span className="home-product-item__sale-of-lable">GIẢM</span>
+                                            <span className="home-product-item__sale-of-percent">43%</span>
+                                        </div>
+
+                                        <div className="wrap-add-cart d-md-flex">
+                                            <div className="quantity">
+                                                <button className="btn-minusProduct">
+                                                    <i className="fa fa-minus" aria-hidden="true"></i>
+                                                </button>
+                                                <input
+                                                    className="quantityProduct"
+                                                    defaultValue="1"
+                                                    type="number"
+                                                    min="1"
+                                                    data-id="37741045"
+                                                    max="100"
+                                                    disabled=""
+                                                />
+                                                <button className="btn-plusProduct">
+                                                    <i className="fa fa-plus" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                            <button className="btn-buyNow ">
+                                                <i className="fa fa-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* <!-- Product item 7--> */}
+                                <div className="col-3">
+                                    <div className="home-product-item">
+                                        <a href="/">
+                                            <div
+                                                className="home-product-item__img"
+                                                style={{
+                                                    backgroundImage:
+                                                        'url(' +
+                                                        'https://cf.shopee.vn/file/0a82d7cc998f02e028d985e57f277640_tn' +
+                                                        ')',
+                                                }}
+                                            ></div>
+                                            <h4 className="home-product-item__name">
+                                                Switch Gateron Milky (KS3X1) - Milky Yellow và Milky Black - Gateron
+                                                KS3X1 - Switch dùng cho bàn phím cơ
+                                            </h4>
+                                        </a>
+                                        <div className="home-product-item__price">
+                                            <span className="home-product-item__price-old">1.200.000đ</span>
+                                            <span className="home-product-item__price-current">999.000đ</span>
+                                        </div>
+
+                                        <div className="home-product-item__favourite">
+                                            <i className="fas fa-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div className="home-product-item__sale-off">
+                                            <span className="home-product-item__sale-of-lable">GIẢM</span>
+                                            <span className="home-product-item__sale-of-percent">43%</span>
+                                        </div>
+
+                                        <div className="wrap-add-cart d-md-flex">
+                                            <div className="quantity">
+                                                <button className="btn-minusProduct">
+                                                    <i className="fa fa-minus" aria-hidden="true"></i>
+                                                </button>
+                                                <input
+                                                    className="quantityProduct"
+                                                    defaultValue="1"
+                                                    type="number"
+                                                    min="1"
+                                                    data-id="37741045"
+                                                    max="100"
+                                                    disabled=""
+                                                />
+                                                <button className="btn-plusProduct">
+                                                    <i className="fa fa-plus" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                            <button className="btn-buyNow ">
+                                                <i className="fa fa-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* <!-- Product item 8--> */}
+                                <div className="col-3">
+                                    <div className="home-product-item">
+                                        <a href="/">
+                                            <div
+                                                className="home-product-item__img"
+                                                style={{
+                                                    backgroundImage:
+                                                        'url(' +
+                                                        'https://cf.shopee.vn/file/0a82d7cc998f02e028d985e57f277640_tn' +
+                                                        ')',
+                                                }}
+                                            ></div>
+                                            <h4 className="home-product-item__name">
+                                                Switch Gateron Milky (KS3X1) - Milky Yellow và Milky Black - Gateron
+                                                KS3X1 - Switch dùng cho bàn phím cơ
+                                            </h4>
+                                        </a>
+                                        <div className="home-product-item__price">
+                                            <span className="home-product-item__price-old">1.200.000đ</span>
+                                            <span className="home-product-item__price-current">999.000đ</span>
+                                        </div>
+
+                                        <div className="home-product-item__favourite">
+                                            <i className="fas fa-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div className="home-product-item__sale-off">
+                                            <span className="home-product-item__sale-of-lable">GIẢM</span>
+                                            <span className="home-product-item__sale-of-percent">43%</span>
+                                        </div>
+
+                                        <div className="wrap-add-cart d-md-flex">
+                                            <div className="quantity">
+                                                <button className="btn-minusProduct">
+                                                    <i className="fa fa-minus" aria-hidden="true"></i>
+                                                </button>
+                                                <input
+                                                    className="quantityProduct"
+                                                    defaultValue="1"
+                                                    type="number"
+                                                    min="1"
+                                                    data-id="37741045"
+                                                    max="100"
+                                                    disabled=""
+                                                />
+                                                <button className="btn-plusProduct">
+                                                    <i className="fa fa-plus" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                            <button className="btn-buyNow ">
+                                                <i className="fa fa-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </li>
-                <li className="product-list__item product-item" pid="37737671">
-                    <div className="product2">
-                        <a className="product2__imgwrap" href="/laptop-dell-vostro-3405-p37737671.html">
-                            <img
-                                className="product1__img lazyautosizes lazyloaded"
-                                data-sizes="auto"
-                                src="https://pos.nvncdn.net/4fa0a7-96878/ps/20220309_dGBsVqA1CZA3YXAqvVxiehd5.png"
-                                data-src="https://pos.nvncdn.net/4fa0a7-96878/ps/20220309_dGBsVqA1CZA3YXAqvVxiehd5.png"
-                                alt="Laptop Dell Vostro 3405"
-                                sizes="234px"
-                            />
-                        </a>
-                        <h6 className="product2__name">
-                            <a href="/laptop-dell-vostro-3405-p37737671.html" className="max-line-2">
-                                Laptop Dell Vostro 3405
-                            </a>
-                        </h6>
-                        <div className="price__p">
-                            <p className="product2__price">14,599,000 ₫</p>
-                        </div>
-                        <div className="wrap-add-cart d-md-flex">
-                            <div className="quantity">
-                                <a className="btn-minusProduct" href="/">
-                                    <i className="fa fa-minus" aria-hidden="true"></i>
-                                </a>
-                                <input
-                                    className="quantityProduct"
-                                    defaultValue="1"
-                                    type="number"
-                                    min="1"
-                                    data-id="37737671"
-                                    max="100"
-                                    disabled=""
-                                />
-                                <a className="btn-plusProduct" href="/">
-                                    <i className="fa fa-plus" aria-hidden="true"></i>
-                                </a>
-                            </div>
-                            <a
-                                title="Chọn mua sản phẩm"
-                                href="/laptop-dell-vostro-3405-p37737671.html"
-                                data-id="37737671"
-                                className="btn-buyNow"
-                            >
-                                <i className="fa fa-cart-plus" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
     );
 }

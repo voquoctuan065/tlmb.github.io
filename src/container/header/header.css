@@ -89,6 +89,7 @@
     border: 0;
     padding: 0;
     margin: 0;
+    font-size: 1.4rem;
 }
 
 
@@ -96,6 +97,10 @@
     color: var(--color-text-white);
     background-color: var(--color-popy);
     cursor: pointer;
+}
+
+.btn-solid-primary i {
+    font-size: 1.4rem;
 }
 
 .search-result {
