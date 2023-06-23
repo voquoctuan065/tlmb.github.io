@@ -28,6 +28,7 @@
     background: var(--color-subbg);
     border-bottom: 4px solid #0652DD;
     margin-top: 122px;
+    padding-top: 2px;
 }
 
 .wide-nave-wrapper {

@@ -5,7 +5,6 @@
 .sidebar-bg {
     background: var(--color-text-white);
     border-radius: 2px;
-    margin-bottom: 20px;
     border: 1px solid #ccc;
 }
 
@@ -19,34 +18,55 @@
 
 .sidebar-bg-title h3 {
     font-size: 1.5rem;
+    font: 500;
 }
 
 .sidebar-bg-title i {
-    margin-right: 4px;
-}
-
-.border-dashed {
-    border-bottom: 2px dashed #ccc;
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+    margin-right: 8px;
 }
 
 .menu-list {
-    font-size: 1.3rem;
-    padding: 10px 5px 5px;
+    font-size: 1.4rem;
+    padding: 5px 5px 5px;
 }
 
 .menu-list ul {
     margin-bottom: 0;
-    padding-right: 2rem;
-}
-
-.menu-product {
-    background: var(--color-footer);
-}
-
-.menu-list ul li {
-    margin-bottom: 5px;
+    padding-right: 1.3rem;
+    padding-left: 0;
 }
 
 .menu-list i {
-    margin-right: 4px;
+    margin-right: 8px;
+}
+
+.navigation {
+    --nav-height: 313px;
+    background: #fff;
+    min-height: 100%;
+    overflow-y: auto;
+}
+
+.navigation .menu-item {
+    position: initial;
+}
+
+.navigation .list-group-item {
+    padding: 8px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 1.2rem 2rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc !important;
+}
+
+.borderBottomNone {
+    border-bottom: none !important;
 }

@@ -1,0 +1,25 @@
+.banner-heading {
+    display: flex;
+    align-items: center;
+    height: 43px;
+}
+
+.banner-heading__item {
+    font-size: 1.4rem;
+    color: var(--color-subtext);
+    margin-right: 20px;
+}
+
+.banner-heading__item i {
+    margin-right: 8px;
+}
+
+.banner-heading__item-hover:hover {
+    color: var(--color-primary) !important;
+}
+
+.banner-img {
+    background-size: cover;
+    height: 313px;
+    object-fit: contain;
+}

@@ -9,7 +9,7 @@
     --color-petal: #f98866;
     --color-subtext: #222f3e;
     --color-primary: #EE4D2D;
-    --color-teal: #20c997;
+    --nav-height: 313px;
 }
 
 * {
@@ -43,4 +43,8 @@ li {
     height: 35px;
     border-radius: 3px;
     border: none;
+}
+
+.container {
+    max-width: 1200px !important;
 }

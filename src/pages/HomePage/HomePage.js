@@ -1,8 +1,7 @@
 import { Footer, Header } from '~/container';
 import './homepage.css';
-import WideNave from '~/container/widenav/WideNav';
-import Content from '~/component/content/Content';
 import PropTypes from 'prop-types';
+import BorderContainer from '~/container/bodyContainer/BodyContainer';
 
 function HomePage({ children }) {
     return (
@@ -11,11 +10,8 @@ function HomePage({ children }) {
                 <Header />
             </div>
             <div className="body-container">
-                <div className="wide-nave-wrapper">
-                    <WideNave />
-                </div>
                 <div>
-                    <Content />
+                    <BorderContainer />
                 </div>
             </div>
             <div className="footing">
