@@ -7,8 +7,7 @@ import Sidebar from '../sidebar/Sidebar';
 import Banner from '~/component/Banner/Banner';
 
 function BorderContainer() {
-    const { product, VND } = useContext(Context);
-
+    const { VND, outstandingMobile, outstandingTablet } = useContext(Context);
     return (
         <div className="container">
             <div className="grid wide">
@@ -26,7 +25,7 @@ function BorderContainer() {
                     <div className="homproduct">
                         <div className="row sm-gutter">
                             {/* item1 */}
-                            {product.map((currentProduct, index) => (
+                            {outstandingMobile.map((currentProduct, index) => (
                                 <div className="col-6 col-md-3 home-product-item" key={index}>
                                     <a href="/">
                                         <div
@@ -35,12 +34,12 @@ function BorderContainer() {
                                                 backgroundImage: `url(${currentProduct.img})`,
                                             }}
                                         ></div>
-                                        <span className="home-product-item__name">{currentProduct.productName}</span>
+                                        <span className="home-product-item__name">{currentProduct.mobileName}</span>
                                     </a>
 
                                     <div className="home-product-item__price">
                                         <span className="home-product-item__price-current">
-                                            {VND.format(currentProduct.price)}
+                                            {VND.format(currentProduct.currentPrice)}
                                         </span>
                                         <button>
                                             <i className="fa-solid fa-circle-plus"></i>
@@ -129,29 +128,32 @@ function BorderContainer() {
                             <div className="col-lg-9 col-12">
                                 <div className="row">
                                     {/* item1 */}
-                                    <div className="col-6 col-md-3 home-product-item">
-                                        <a href="/">
-                                            <div
-                                                className="home-product-item__img"
-                                                style={{
-                                                    backgroundImage:
-                                                        'url(' +
-                                                        'https://cdn.tgdd.vn/Products/Images/522/247517/iPad-9-wifi-trang-600x600.jpg' +
-                                                        ')',
-                                                }}
-                                            ></div>
-                                            <span className="home-product-item__name">iPad 9 WiFi 64GB</span>
-                                        </a>
-                                        <div className="home-product-item__price">
-                                            <span className="home-product-item__price-current">8.090.000đ</span>
-                                            <button>
-                                                <i className="fa-solid fa-circle-plus"></i>
-                                            </button>
+                                    {outstandingTablet.map((currentTablet) => (
+                                        <div className="col-6 col-md-3 home-product-item" key={currentTablet.id}>
+                                            <a href="/">
+                                                <div
+                                                    className="home-product-item__img"
+                                                    style={{
+                                                        backgroundImage: `url(${currentTablet.img})`,
+                                                    }}
+                                                ></div>
+                                                <span className="home-product-item__name">
+                                                    {currentTablet.tabletName}
+                                                </span>
+                                            </a>
+                                            <div className="home-product-item__price">
+                                                <span className="home-product-item__price-current">
+                                                    {VND.format(currentTablet.currentPrice)}
+                                                </span>
+                                                <button>
+                                                    <i className="fa-solid fa-circle-plus"></i>
+                                                </button>
+                                            </div>
+                                            <div className="home-product-item__favourite">
+                                                <span>Trả góp 0%</span>
+                                            </div>
                                         </div>
-                                        <div className="home-product-item__favourite">
-                                            <span>Trả góp 0%</span>
-                                        </div>
-                                    </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>

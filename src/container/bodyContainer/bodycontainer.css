@@ -66,6 +66,10 @@
     box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
+.home-product-item a h3:hover {
+    color: var(--color-popy);
+}
+
 .home-product-item .home-product-item__name:hover {
     color: var(--color-popy);
 }
@@ -83,7 +87,7 @@
     font-weight: 400;
     color: var(--color-subtext);
     line-height: 1.8rem;
-    height: 3.6rem;
+    height: 4.5rem;
     padding: 10px;
     margin-top: 10px;
     overflow: hidden;

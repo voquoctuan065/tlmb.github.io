@@ -14,7 +14,7 @@ function Sidebar() {
                     <ul className="navigation">
                         <li className="menu-item list-group-item">
                             <i className="fa-solid fa-mobile"></i>
-                            <a href="/Mobile">Điện thoại</a>
+                            <a href="/mobile">Điện thoại</a>
                         </li>
                         <li className="menu-item list-group-item">
                             <i className="fa-solid fa-tablet"></i>
@@ -22,23 +22,23 @@ function Sidebar() {
                         </li>
                         <li className="menu-item list-group-item">
                             <i className="fa-solid fa-headphones"></i>
-                            <a href="/accessory">Tai nghe</a>
+                            <a href="/headphone">Tai nghe</a>
                         </li>
                         <li className="menu-item list-group-item">
                             <i className="fa-solid fa-bolt"></i>
-                            <a href="/oldmobile">Xạc dự phòng</a>
+                            <a href="/backupcharger">Xạc dự phòng</a>
                         </li>
                         <li className="menu-item list-group-item">
                             <i className="fa-sharp fa-solid fa-charging-station"></i>
-                            <a href="/oldmobile">Củ xạc</a>
+                            <a href="/charger">Củ xạc</a>
                         </li>
                         <li className="menu-item list-group-item">
                             <i className="fa-solid fa-code-compare"></i>
-                            <a href="/oldmobile">Cáp xạc</a>
+                            <a href="/chargingcord">Cáp xạc</a>
                         </li>
                         <li className="menu-item list-group-item">
                             <i className="fa-solid fa-microscope"></i>
-                            <a href="/oldmobile">Phụ kiện</a>
+                            <a href="/accessory">Phụ kiện</a>
                         </li>
                         <li className="menu-item list-group-item borderBottomNone ">
                             <i className="fa-sharp fa-solid fa-mobile"></i>

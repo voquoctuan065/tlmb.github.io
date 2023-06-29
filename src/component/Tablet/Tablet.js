@@ -31,8 +31,8 @@ function LIST({ cln, btnTitle }) {
     );
 }
 
-function Mobile() {
-    const { VND, mobile } = useContext(Context);
+function Tablet() {
+    const { VND, tablet } = useContext(Context);
 
     return (
         <ProductPage>
@@ -42,7 +42,7 @@ function Mobile() {
                         <a href="/">Trang chủ</a>
                     </li>
                     <div className="slash">/</div>
-                    <li className="active">Điện thoại</li>
+                    <li className="active">Máy tính bảng</li>
                 </ul>
             </nav>
 
@@ -63,10 +63,10 @@ function Mobile() {
                                             type="checkbox"
                                             dataGroup="Hãng"
                                             dataField="vendor"
-                                            dataText="Apple"
+                                            dataText="iPad"
                                             dataOperator="OR"
-                                            value="Apple"
-                                            title="Apple"
+                                            value="iPad"
+                                            title="iPad"
                                         />
                                         <LI
                                             filter="filter-samsung"
@@ -93,20 +93,30 @@ function Mobile() {
                                             type="checkbox"
                                             dataGroup="Hãng"
                                             dataField="vendor"
-                                            dataText="Nokia"
+                                            dataText="Oppo"
                                             dataOperator="OR"
-                                            value="Nokia"
-                                            title="Nokia"
+                                            value="Oppo"
+                                            title="Oppo"
                                         />
                                         <LI
                                             filter="filter-realme"
                                             type="checkbox"
                                             dataGroup="Hãng"
                                             dataField="vendor"
-                                            dataText="Realme"
+                                            dataText="Lenovo"
                                             dataOperator="OR"
-                                            value="Realme"
-                                            title="Realme"
+                                            value="Lenovo"
+                                            title="Lenovo"
+                                        />
+                                        <LI
+                                            filter="filter-realme"
+                                            type="checkbox"
+                                            dataGroup="Hãng"
+                                            dataField="vendor"
+                                            dataText="Mastel"
+                                            dataOperator="OR"
+                                            value="Mastel"
+                                            title="Mastel"
                                         />
                                     </ul>
                                 </div>
@@ -118,54 +128,44 @@ function Mobile() {
                                 <div className="aside-content filter-group">
                                     <ul>
                                         <LI
-                                            filter="filter-duoi2-000-000d"
+                                            filter="filter-duoi3-000-000d"
                                             type="checkbox"
                                             dataGroup="Khoảng giá"
                                             dataField="price_min"
-                                            dataText="Dưới 2.000.000đ"
+                                            dataText="Dưới 3.000.000đ"
                                             dataOperator="OR"
-                                            value="<2000000"
-                                            title="Dưới 2.000.000đ"
+                                            value="<3000000"
+                                            title="Dưới 3.000.000đ"
                                         />
                                         <LI
-                                            filter="filter-2-000-000d-4-000-000d"
+                                            filter="filter-3-000-000d-8-000-000d"
                                             type="checkbox"
                                             dataGroup="Khoảng giá"
                                             dataField="price_min"
-                                            dataText="2.000.000đ - 4.000.000đ"
+                                            dataText="3.000.000đ - 8.000.000đ"
                                             dataOperator="OR"
-                                            value=">=2000000 AND <= 4000000"
-                                            title="2.000.000đ - 4.000.000đ"
+                                            value=">=3000000 AND <= 8000000"
+                                            title="3.000.000đ - 8.000.000đ"
                                         />
                                         <LI
-                                            filter="filter-4-000-000d-6-000-000d"
+                                            filter="filter-8-000-000d-15-000-000d"
                                             type="checkbox"
                                             dataGroup="Khoảng giá"
                                             dataField="price_min"
-                                            dataText="4.000.000đ - 6.000.000đ"
+                                            dataText="8.000.000đ - 15.000.000đ"
                                             dataOperator="OR"
-                                            value=">=4000000 AND <= 6000000"
-                                            title="4.000.000đ - 6.000.000đ"
+                                            value=">=8000000 AND <= 15000000"
+                                            title="8.000.000đ - 15.000.000đ"
                                         />
                                         <LI
-                                            filter="filter-6-000-000d-10-000-000d"
+                                            filter="filter-tren15-000-000d"
                                             type="checkbox"
                                             dataGroup="Khoảng giá"
                                             dataField="price_min"
-                                            dataText="6.000.000đ - 10.000.000đ"
+                                            dataText="Trên 15.000.000đ"
                                             dataOperator="OR"
-                                            value=">=6000000 AND <= 10000000"
-                                            title="6.000.000đ - 10.000.000đ"
-                                        />
-                                        <LI
-                                            filter="filter-tren10-000-000d"
-                                            type="checkbox"
-                                            dataGroup="Khoảng giá"
-                                            dataField="price_min"
-                                            dataText="Trên 10.000.000đ"
-                                            dataOperator="OR"
-                                            value=">10000000"
-                                            title="Trên 10.000.000đ"
+                                            value=">15000000"
+                                            title="Trên 15.000.000đ"
                                         />
                                     </ul>
                                 </div>
@@ -177,44 +177,44 @@ function Mobile() {
                                 <div className="aside-content filter-group">
                                     <ul>
                                         <LI
-                                            filter="filter-duoi5-inch"
+                                            filter="filter-khoang-7-8-inch"
                                             type="checkbox"
                                             dataGroup="Màn hình"
                                             dataField="screen"
                                             dataText="Dưới 5 inch"
                                             dataOperator="OR"
                                             value="<5"
-                                            title="Màn hình nhỏ: dưới 5 inch"
+                                            title="Khoảng 7 - 8 inch"
                                         />
                                         <LI
-                                            filter="filter-duoi6-inch"
+                                            filter="filter-khoang-9-inch"
                                             type="checkbox"
                                             dataGroup="Màn hình"
                                             dataField="screen"
-                                            dataText="Dưới 6 inch"
+                                            dataText="Khoảng 9 inch"
                                             dataOperator="OR"
                                             value="<6"
-                                            title="Nhỏ gọn vừa tay: dưới 6 inch"
+                                            title="Khoảng 9 inch"
                                         />
                                         <LI
-                                            filter="filter-tren6-inch"
+                                            filter="filter-khoang-10-11-inch"
                                             type="checkbox"
                                             dataGroup="Màn hình"
                                             dataField="screen"
-                                            dataText="Trên 6 inch"
+                                            dataText="Khoảng 10 - 11 inch"
                                             dataOperator="OR"
                                             value=">6"
-                                            title="Trên 6 inch"
+                                            title="Khoảng 10 - 11 inch"
                                         />
                                         <LI
-                                            filter="filter-man-hinh-gap"
+                                            filter="filter-khoang-tren-12-inch"
                                             type="checkbox"
                                             dataGroup="Màn hình"
                                             dataField="screen"
-                                            dataText="Màn hình gập"
+                                            dataText="Khoảng 12 inch trở lên"
                                             dataOperator="OR"
                                             value="Màn hình gập"
-                                            title="Màn hình gập"
+                                            title="Khoảng 12 inch trở lên"
                                         />
                                     </ul>
                                 </div>
@@ -224,7 +224,7 @@ function Mobile() {
 
                     <div className="collection-container col-9 right">
                         <div className="title-module padding-0 margin-bottom-15">
-                            <h1>Điện thoại</h1>
+                            <h1>Máy tính bảng</h1>
                         </div>
                         <div className="row category-product product">
                             <div className="sort-cate-left d-flex align-center bg-white margin-bottom-20 padding-15">
@@ -240,11 +240,11 @@ function Mobile() {
                                         <LIST cln={['btn-quick-sort created-asc']} btnTitle="Cũ nhất" />
                                     </ul>
                                 </div>
-                                <span className="coll-count">{mobile.length + ' sản phẩm'}</span>
+                                <span className="coll-count">7 Sản phẩm</span>
                             </div>
                             <div className="section-product">
                                 <div className="row sm-gutter">
-                                    {mobile.map((currentMobile) => (
+                                    {tablet.map((currentMobile) => (
                                         <div className="col-3 col-md-3 home-product-item" key={currentMobile.id}>
                                             <a href="/">
                                                 <div
@@ -256,8 +256,8 @@ function Mobile() {
                                                 <h3 className="product-name">{currentMobile.mobileName}</h3>
                                             </a>
                                             <div className="item-compare gray-bg">
-                                                <span>{currentMobile.screenSize}</span>
                                                 <span>{currentMobile.resolution}</span>
+                                                <span>{currentMobile.screenSize}</span>
                                             </div>
                                             {currentMobile.oldprice ? (
                                                 <div className="box-p">
@@ -298,4 +298,4 @@ function Mobile() {
         </ProductPage>
     );
 }
-export default Mobile;
+export default Tablet;

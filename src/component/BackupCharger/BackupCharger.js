@@ -31,7 +31,7 @@ function LIST({ cln, btnTitle }) {
     );
 }
 
-function Mobile() {
+function BackupCharger() {
     const { VND, mobile } = useContext(Context);
 
     return (
@@ -42,7 +42,7 @@ function Mobile() {
                         <a href="/">Trang chủ</a>
                     </li>
                     <div className="slash">/</div>
-                    <li className="active">Điện thoại</li>
+                    <li className="active">Xạc dự phòng</li>
                 </ul>
             </nav>
 
@@ -240,7 +240,7 @@ function Mobile() {
                                         <LIST cln={['btn-quick-sort created-asc']} btnTitle="Cũ nhất" />
                                     </ul>
                                 </div>
-                                <span className="coll-count">{mobile.length + ' sản phẩm'}</span>
+                                <span className="coll-count">7 Sản phẩm</span>
                             </div>
                             <div className="section-product">
                                 <div className="row sm-gutter">
@@ -298,4 +298,4 @@ function Mobile() {
         </ProductPage>
     );
 }
-export default Mobile;
+export default BackupCharger;
