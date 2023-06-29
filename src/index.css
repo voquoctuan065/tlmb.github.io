@@ -30,6 +30,7 @@ button {
 
 a {
     text-decoration: none !important;
+    /* cursor: pointer !important; */
 }
 
 li {
@@ -47,4 +48,5 @@ li {
 
 .container {
     max-width: 1200px !important;
+    padding: 0 !important;
 }

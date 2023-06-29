@@ -1,12 +1,37 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Tippy from '@tippyjs/react/headless';
 
 import './header.css';
 import Search from '~/component/Search/Search';
 import CartDrawer from '~/component/Cart/Cartdrawer';
 import { Navbar } from '..';
+import Context from '~/store/Context';
+
+const productItem = [
+    {
+        url: 'https://down-vn.img.susercontent.com/file/b4a2bd138f078704fa1846857f3eb80e_tn',
+        productName: 'Bàn phím cơ DAREU EK880 led RGB (RGB, Blue/ Brown/ Red D switch)',
+        productPrice: '2.000.000',
+    },
+    {
+        url: 'https://down-vn.img.susercontent.com/file/b4a2bd138f078704fa1846857f3eb80e_tn',
+        productName: 'Bàn phím cơ DAREU EK880 led RGB (RGB, Blue/ Brown/ Red D switch)',
+        productPrice: '3.000.000',
+    },
+    {
+        url: 'https://down-vn.img.susercontent.com/file/b4a2bd138f078704fa1846857f3eb80e_tn',
+        productName: 'Bàn phím cơ DAREU EK880 led RGB (RGB, Blue/ Brown/ Red D switch)',
+        productPrice: '4.000.000',
+    },
+    {
+        url: 'https://down-vn.img.susercontent.com/file/b4a2bd138f078704fa1846857f3eb80e_tn',
+        productName: 'Bàn phím cơ DAREU EK880 led RGB (RGB, Blue/ Brown/ Red D switch)',
+        productPrice: '4.000.000',
+    },
+];
 
 const Header = () => {
+    const { currentUser, user } = useContext(Context);
     return (
         <div>
             <Navbar />
@@ -183,7 +208,15 @@ const Header = () => {
                                 <a href="/" id="cart_drawer_target_id">
                                     <i className="header__cart-icon fas fa-shopping-cart"></i>
                                 </a>
-                                {/* <span className="header__cart-notice">3</span> */}
+                                {currentUser || user ? (
+                                    productItem.length === 0 ? (
+                                        ''
+                                    ) : (
+                                        <span className="header__cart-notice">{productItem.length}</span>
+                                    )
+                                ) : (
+                                    ''
+                                )}
                             </div>
                         </Tippy>
                     </div>

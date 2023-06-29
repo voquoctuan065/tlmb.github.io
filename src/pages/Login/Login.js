@@ -10,7 +10,7 @@ function Login() {
     });
     const [err, setError] = useState(null);
     const navigate = useNavigate();
-    const {login} = useContext(Context);
+    const { login, google, facebook } = useContext(Context);
 
     const handleChange = (e) => {
         setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -247,21 +247,21 @@ function Login() {
                             Quên mật khẩu?
                         </a>
                     </div>
-
+                </form>
+                <div className="regis-form-social">
                     <div className="form-choose">
                         <div className="form-choose-lr"></div>
                         <span className="form-chose-title">hoặc</span>
                         <div className="form-choose-lr"></div>
                     </div>
-
                     <div className="regis-social">
-                        <button className="regis-social__btn regis-fb">
+                        <button className="regis-social__btn regis-fb" onClick={facebook}>
                             <div className="regis-social__icon">
                                 <i className="fa-brands fa-facebook"></i>
                             </div>
                             <div>Facebook</div>
                         </button>
-                        <button className="regis-social__btn regis-gg">
+                        <button className="regis-social__btn regis-gg" onClick={google}>
                             <div className="regis-social__icon">
                                 <svg
                                     version="1.1"
@@ -295,7 +295,7 @@ function Login() {
                             <div>Google</div>
                         </button>
                     </div>
-                </form>
+                </div>
             </div>
 
             <Footer />

@@ -1,15 +1,19 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useFormik } from 'formik';
 import { Footer } from '~/container';
 import { useNavigate } from 'react-router-dom';
 
 import './register.css';
 import { userSchema } from '~/schemas';
+import Context from '~/store/Context';
 
 function Register() {
     const [err, setError] = useState(null);
     const navigate = useNavigate();
+
+    const { google, facebook } = useContext(Context);
+
     const element = document.querySelector('.success-message');
 
     async function onSubmit(values, actions) {
@@ -289,21 +293,21 @@ function Register() {
                     <button disabled={isSubmitting} className="form-submit" type="submit">
                         Đăng ký
                     </button>
-
+                </form>
+                <div className="regis-form-social">
                     <div className="form-choose">
                         <div className="form-choose-lr"></div>
                         <span className="form-chose-title">hoặc</span>
                         <div className="form-choose-lr"></div>
                     </div>
-
                     <div className="regis-social">
-                        <button className="regis-social__btn regis-fb">
+                        <button className="regis-social__btn regis-fb" onClick={facebook}>
                             <div className="regis-social__icon">
                                 <i className="fa-brands fa-facebook"></i>
                             </div>
                             <div>Facebook</div>
                         </button>
-                        <button className="regis-social__btn regis-gg">
+                        <button className="regis-social__btn regis-gg" onClick={google}>
                             <div className="regis-social__icon">
                                 <svg
                                     version="1.1"
@@ -337,14 +341,13 @@ function Register() {
                             <div>Google</div>
                         </button>
                     </div>
-
                     <div className="regis-span">
                         Bạn đã có tài khoản?{' '}
                         <a href="/login" className="regis-span__login">
                             Đăng nhập
                         </a>
                     </div>
-                </form>
+                </div>
             </div>
 
             <Footer />

@@ -19,15 +19,15 @@
     margin-bottom: 10px;
 }
 
-ul > li {
+ul>li {
     padding-bottom: 5px;
 }
 
-ul > li > a {
+ul>li>a {
     color: var(--color-subtext);
 }
 
-ul > li > a:hover {
+ul>li>a:hover {
     color: var(--color-popy);
 }
 
@@ -45,6 +45,7 @@ ul > li > a:hover {
 .regis__notifications button {
     background-color: var(--color-popy);
     color: var(--color-text-white);
+    font-size: 1.4rem;
 }
 
 .footer__end {

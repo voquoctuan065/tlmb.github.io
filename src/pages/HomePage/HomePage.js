@@ -1,9 +1,8 @@
 import { Footer, Header } from '~/container';
 import './homepage.css';
-import PropTypes from 'prop-types';
 import BorderContainer from '~/container/bodyContainer/BodyContainer';
 
-function HomePage({ children }) {
+function HomePage() {
     return (
         <div>
             <div className="heading heading-top-sticky">
@@ -20,9 +19,5 @@ function HomePage({ children }) {
         </div>
     );
 }
-
-HomePage.propTypes = {
-    children: PropTypes.node,
-};
 
 export default HomePage;

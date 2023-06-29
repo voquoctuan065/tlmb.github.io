@@ -1,10 +1,14 @@
+import { useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Banner from '~/component/Banner/Banner';
-import Sidebar from '../sidebar/Sidebar';
 import './bodycontainer.css';
+import Context from '~/store/Context';
+import Sidebar from '../sidebar/Sidebar';
+import Banner from '~/component/Banner/Banner';
 
 function BorderContainer() {
+    const { product, VND } = useContext(Context);
+
     return (
         <div className="container">
             <div className="grid wide">
@@ -22,111 +26,35 @@ function BorderContainer() {
                     <div className="homproduct">
                         <div className="row sm-gutter">
                             {/* item1 */}
-                            <div className="col-6 col-md-3 home-product-item">
-                                <a href="/">
-                                    <div
-                                        className="home-product-item__img"
-                                        style={{
-                                            backgroundImage:
-                                                'url(' +
-                                                'https://bizweb.dktcdn.net/thumb/medium/100/441/086/products/iphone-xi-do-600x600.jpg?v=1639878154720' +
-                                                ')',
-                                        }}
-                                    ></div>
-                                    <span className="home-product-item__name">iPhone XR</span>
-                                </a>
+                            {product.map((currentProduct, index) => (
+                                <div className="col-6 col-md-3 home-product-item" key={index}>
+                                    <a href="/">
+                                        <div
+                                            className="home-product-item__img"
+                                            style={{
+                                                backgroundImage: `url(${currentProduct.img})`,
+                                            }}
+                                        ></div>
+                                        <span className="home-product-item__name">{currentProduct.productName}</span>
+                                    </a>
 
-                                <div className="home-product-item__price">
-                                    <span className="home-product-item__price-current">14.990.000đ</span>
-                                    <button>
-                                        <i className="fa-solid fa-circle-plus"></i>
-                                    </button>
-                                </div>
+                                    <div className="home-product-item__price">
+                                        <span className="home-product-item__price-current">
+                                            {VND.format(currentProduct.price)}
+                                        </span>
+                                        <button>
+                                            <i className="fa-solid fa-circle-plus"></i>
+                                        </button>
+                                    </div>
 
-                                <div className="home-product-item__favourite">
-                                    <span>Trả góp 0%</span>
+                                    <div className="home-product-item__favourite">
+                                        <span>Trả góp 0%</span>
+                                    </div>
                                 </div>
-                            </div>
-
-                            {/* item2 */}
-                            <div className="col-6 col-md-3 home-product-item">
-                                <a href="/">
-                                    <div
-                                        className="home-product-item__img"
-                                        style={{
-                                            backgroundImage:
-                                                'url(' +
-                                                'https://bizweb.dktcdn.net/thumb/medium/100/441/086/products/1121544672-jpeg.jpg?v=1639816055390' +
-                                                ')',
-                                        }}
-                                    ></div>
-                                    <h4 className="home-product-item__name">Samsung Galaxy Z Fold3</h4>
-                                </a>
-                                <div className="home-product-item__price">
-                                    <span className="home-product-item__price-current">41.999.000đ</span>
-                                    <button>
-                                        <i className="fa-solid fa-circle-plus"></i>
-                                    </button>
-                                </div>
-                                <div className="home-product-item__favourite">
-                                    <span>Trả góp 0%</span>
-                                </div>
-                            </div>
-
-                            {/* item3 */}
-                            <div className="col-6 col-md-3 home-product-item">
-                                <a href="/">
-                                    <div
-                                        className="home-product-item__img"
-                                        style={{
-                                            backgroundImage:
-                                                'url(' +
-                                                'https://bizweb.dktcdn.net/thumb/medium/100/441/086/products/1061131762-jpeg.jpg?v=1639817915377' +
-                                                ')',
-                                        }}
-                                    ></div>
-                                    <h4 className="home-product-item__name">Điện thoại Oppo A95</h4>
-                                </a>
-                                <div className="home-product-item__price">
-                                    <span className="home-product-item__price-current">6.999.000đ</span>
-                                    <button>
-                                        <i className="fa-solid fa-circle-plus"></i>
-                                    </button>
-                                </div>
-                                <div className="home-product-item__favourite">
-                                    <i className="fas fa-check"></i>
-                                    <span>Trả góp 0%</span>
-                                </div>
-                            </div>
-
-                            {/* item4 */}
-                            <div className="col-6 col-md-3 home-product-item">
-                                <a href="/">
-                                    <div
-                                        className="home-product-item__img"
-                                        style={{
-                                            backgroundImage:
-                                                'url(' +
-                                                'https://bizweb.dktcdn.net/thumb/medium/100/441/086/products/1907192133-jpeg.jpg?v=1639817401933' +
-                                                ')',
-                                        }}
-                                    ></div>
-                                    <h4 className="home-product-item__name">Samsung Galaxy A32 5G</h4>
-                                </a>
-                                <div className="home-product-item__price">
-                                    <span className="home-product-item__price-current">6.090.000đ</span>
-                                    <button>
-                                        <i className="fa-solid fa-circle-plus"></i>
-                                    </button>
-                                </div>
-                                <div className="home-product-item__favourite">
-                                    <i className="fas fa-check"></i>
-                                    <span>Trả góp 0%</span>
-                                </div>
-                            </div>
+                            ))}
 
                             <div className="text-center mt-5 col-12">
-                                <a href="/dien-thoai" title="Xem tất cả" className="see-btn seebtn-product">
+                                <a href="/mobile" title="Xem tất cả" className="see-btn seebtn-product">
                                     Xem tất cả
                                 </a>
                             </div>
@@ -208,93 +136,19 @@ function BorderContainer() {
                                                 style={{
                                                     backgroundImage:
                                                         'url(' +
-                                                        'https://bizweb.dktcdn.net/thumb/medium/100/441/086/products/iphone-xi-do-600x600.jpg?v=1639878154720' +
+                                                        'https://cdn.tgdd.vn/Products/Images/522/247517/iPad-9-wifi-trang-600x600.jpg' +
                                                         ')',
                                                 }}
                                             ></div>
-                                            <span className="home-product-item__name">iPhone XR</span>
+                                            <span className="home-product-item__name">iPad 9 WiFi 64GB</span>
                                         </a>
                                         <div className="home-product-item__price">
-                                            <span className="home-product-item__price-current">14.990.000đ</span>
+                                            <span className="home-product-item__price-current">8.090.000đ</span>
                                             <button>
                                                 <i className="fa-solid fa-circle-plus"></i>
                                             </button>
                                         </div>
                                         <div className="home-product-item__favourite">
-                                            <span>Trả góp 0%</span>
-                                        </div>
-                                    </div>
-                                    {/* item2 */}
-                                    <div className="col-6 col-md-3  home-product-item">
-                                        <a href="/">
-                                            <div
-                                                className="home-product-item__img"
-                                                style={{
-                                                    backgroundImage:
-                                                        'url(' +
-                                                        'https://bizweb.dktcdn.net/thumb/medium/100/441/086/products/1121544672-jpeg.jpg?v=1639816055390' +
-                                                        ')',
-                                                }}
-                                            ></div>
-                                            <h4 className="home-product-item__name">Samsung Galaxy Z Fold3</h4>
-                                        </a>
-                                        <div className="home-product-item__price">
-                                            <span className="home-product-item__price-current">41.999.000đ</span>
-                                            <button>
-                                                <i className="fa-solid fa-circle-plus"></i>
-                                            </button>
-                                        </div>
-                                        <div className="home-product-item__favourite">
-                                            <span>Trả góp 0%</span>
-                                        </div>
-                                    </div>
-                                    {/* item3 */}
-                                    <div className="col-6 col-md-3 home-product-item">
-                                        <a href="/">
-                                            <div
-                                                className="home-product-item__img"
-                                                style={{
-                                                    backgroundImage:
-                                                        'url(' +
-                                                        'https://bizweb.dktcdn.net/thumb/medium/100/441/086/products/1061131762-jpeg.jpg?v=1639817915377' +
-                                                        ')',
-                                                }}
-                                            ></div>
-                                            <h4 className="home-product-item__name">Điện thoại Oppo A95</h4>
-                                        </a>
-                                        <div className="home-product-item__price">
-                                            <span className="home-product-item__price-current">6.999.000đ</span>
-                                            <button>
-                                                <i className="fa-solid fa-circle-plus"></i>
-                                            </button>
-                                        </div>
-                                        <div className="home-product-item__favourite">
-                                            <i className="fas fa-check"></i>
-                                            <span>Trả góp 0%</span>
-                                        </div>
-                                    </div>
-                                    {/* item4 */}
-                                    <div className="col-6 col-md-3 home-product-item">
-                                        <a href="/">
-                                            <div
-                                                className="home-product-item__img"
-                                                style={{
-                                                    backgroundImage:
-                                                        'url(' +
-                                                        'https://bizweb.dktcdn.net/thumb/medium/100/441/086/products/1907192133-jpeg.jpg?v=1639817401933' +
-                                                        ')',
-                                                }}
-                                            ></div>
-                                            <h4 className="home-product-item__name">Samsung Galaxy A32 5G</h4>
-                                        </a>
-                                        <div className="home-product-item__price">
-                                            <span className="home-product-item__price-current">6.090.000đ</span>
-                                            <button>
-                                                <i className="fa-solid fa-circle-plus"></i>
-                                            </button>
-                                        </div>
-                                        <div className="home-product-item__favourite">
-                                            <i className="fas fa-check"></i>
                                             <span>Trả góp 0%</span>
                                         </div>
                                     </div>

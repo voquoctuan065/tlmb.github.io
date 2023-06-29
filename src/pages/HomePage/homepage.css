@@ -16,6 +16,7 @@
 }
 
 .footing {
+    border-top: 4px solid #0652DD;
     background: var(--color-footer);
 }
 
@@ -26,7 +27,6 @@
 
 .body-container {
     background: var(--color-subbg);
-    border-bottom: 4px solid #0652DD;
     margin-top: 122px;
     padding-top: 2px;
 }

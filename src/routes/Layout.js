@@ -1,13 +1,13 @@
-import HomePage from '~/pages/HomePage/HomePage';
-import ProductPage from '~/pages/ProductPage/ProductPage';
-import Register from '~/pages/Register/Register';
 import Login from '~/pages/Login/Login';
+import Mobile from '~/component/Mobile/Mobile';
+import HomePage from '~/pages/HomePage/HomePage';
+import Register from '~/pages/Register/Register';
 
 const publicRoutes = [
     { path: '/', component: HomePage },
-    { path: '/ProductPage', component: ProductPage },
     { path: '/register', component: Register },
     { path: '/login', component: Login },
+    { path: '/mobile', component: Mobile },
 ];
 
 const privateRoutes = [];

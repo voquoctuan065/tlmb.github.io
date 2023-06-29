@@ -6,7 +6,7 @@ import Notify from '~/component/Notify/Notify';
 import Context from '~/store/Context';
 
 const Navbar = () => {
-    const { currentUser, logout } = useContext(Context);
+    const { currentUser, logout, user, logoutGoogle } = useContext(Context);
 
     return (
         <div className="navbar-container">
@@ -80,6 +80,34 @@ const Navbar = () => {
                                 <div className="navbar__username">{currentUser.username}</div>
                             </div>
                         </Tippy>
+                    ) : user ? (
+                        <Tippy
+                            interactive={true}
+                            placement="bottom-end"
+                            render={(attrs) => (
+                                <div className="user-box" tabIndex="-1" {...attrs}>
+                                    <a className="navbar-account-drawer__button navbar-user-link" href="/user/account">
+                                        <span>Tài khoản của tôi</span>
+                                    </a>
+                                    <a
+                                        className="navbar-account-drawer__button navbar-user-link"
+                                        href="/user/purchase/"
+                                    >
+                                        <span>Đơn Mua</span>
+                                    </a>
+                                    <button
+                                        onClick={logoutGoogle}
+                                        className="navbar-account-drawer__button reset-button-style"
+                                    >
+                                        Đăng xuất
+                                    </button>
+                                </div>
+                            )}
+                        >
+                            <div className="navbar__link--account__container">
+                                <div className="navbar__username">{user.displayName}</div>
+                            </div>
+                        </Tippy>
                     ) : (
                         <div className="Navbar__right-action">
                             <a href="/register" className="Navbar__right-regist">
@@ -91,7 +119,6 @@ const Navbar = () => {
                         </div>
                     )}
                     {/*  */}
-
                     {/*  */}
                 </div>
             </div>
