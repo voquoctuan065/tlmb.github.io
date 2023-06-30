@@ -1,6 +1,6 @@
 import { Footer, Header } from '~/container';
 import './homepage.css';
-import BorderContainer from '~/container/bodyContainer/BodyContainer';
+import BodyContainer from '~/container/bodyContainer/BodyContainer';
 
 function HomePage() {
     return (
@@ -10,7 +10,7 @@ function HomePage() {
             </div>
             <div className="body-container">
                 <div>
-                    <BorderContainer />
+                    <BodyContainer />
                 </div>
             </div>
             <div className="footing">

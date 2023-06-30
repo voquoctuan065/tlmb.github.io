@@ -6,7 +6,7 @@ import Context from '~/store/Context';
 import Sidebar from '../sidebar/Sidebar';
 import Banner from '~/component/Banner/Banner';
 
-function BorderContainer() {
+function BodyContainer() {
     const { VND, outstandingMobile, outstandingTablet } = useContext(Context);
     return (
         <div className="container">
@@ -31,15 +31,18 @@ function BorderContainer() {
                                         <div
                                             className="home-product-item__img"
                                             style={{
-                                                backgroundImage: `url(${currentProduct.img})`,
+                                                backgroundImage: `url(${currentProduct.image_link})`,
                                             }}
                                         ></div>
-                                        <span className="home-product-item__name">{currentProduct.mobileName}</span>
+                                        <span className="home-product-item__name">{currentProduct.productName}</span>
                                     </a>
 
                                     <div className="home-product-item__price">
                                         <span className="home-product-item__price-current">
-                                            {VND.format(currentProduct.currentPrice)}
+                                            {VND.format(
+                                                currentProduct.price -
+                                                    currentProduct.price * (currentProduct.discount / 100),
+                                            )}
                                         </span>
                                         <button>
                                             <i className="fa-solid fa-circle-plus"></i>
@@ -47,7 +50,7 @@ function BorderContainer() {
                                     </div>
 
                                     <div className="home-product-item__favourite">
-                                        <span>Trả góp 0%</span>
+                                        <span>{'Giảm ' + currentProduct.discount + '%'}</span>
                                     </div>
                                 </div>
                             ))}
@@ -134,23 +137,26 @@ function BorderContainer() {
                                                 <div
                                                     className="home-product-item__img"
                                                     style={{
-                                                        backgroundImage: `url(${currentTablet.img})`,
+                                                        backgroundImage: `url(${currentTablet.image_link})`,
                                                     }}
                                                 ></div>
                                                 <span className="home-product-item__name">
-                                                    {currentTablet.tabletName}
+                                                    {currentTablet.productName}
                                                 </span>
                                             </a>
                                             <div className="home-product-item__price">
                                                 <span className="home-product-item__price-current">
-                                                    {VND.format(currentTablet.currentPrice)}
+                                                    {VND.format(
+                                                        currentTablet.price -
+                                                            currentTablet.price * (currentTablet.discount / 100),
+                                                    )}
                                                 </span>
                                                 <button>
                                                     <i className="fa-solid fa-circle-plus"></i>
                                                 </button>
                                             </div>
                                             <div className="home-product-item__favourite">
-                                                <span>Trả góp 0%</span>
+                                                <span>{'Giảm ' + currentTablet.discount + '%'}</span>
                                             </div>
                                         </div>
                                     ))}
@@ -397,4 +403,4 @@ function BorderContainer() {
     );
 }
 
-export default BorderContainer;
+export default BodyContainer;

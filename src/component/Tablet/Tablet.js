@@ -250,34 +250,29 @@ function Tablet() {
                                                 <div
                                                     className="home-product-item__img"
                                                     style={{
-                                                        backgroundImage: `url(${currentMobile.img})`,
+                                                        backgroundImage: `url(${currentMobile.image_link})`,
                                                     }}
                                                 ></div>
-                                                <h3 className="product-name">{currentMobile.mobileName}</h3>
+                                                <h3 className="product-name">{currentMobile.productName}</h3>
                                             </a>
                                             <div className="item-compare gray-bg">
                                                 <span>{currentMobile.resolution}</span>
                                                 <span>{currentMobile.screenSize}</span>
                                             </div>
-                                            {currentMobile.oldprice ? (
+                                            {currentMobile.discount > 0 ? (
                                                 <div className="box-p">
-                                                    <p className="price-old black">
-                                                        {VND.format(currentMobile.oldprice)}
-                                                    </p>
-                                                    <span className="percent">
-                                                        {Math.round(
-                                                            ((currentMobile.oldprice - currentMobile.currentPrice) /
-                                                                currentMobile.oldprice) *
-                                                                100,
-                                                        ) + '%'}
-                                                    </span>
+                                                    <p className="price-old black">{VND.format(currentMobile.price)}</p>
+                                                    <span className="percent">{currentMobile.discount + '%'}</span>
                                                 </div>
                                             ) : (
                                                 ''
                                             )}
                                             <div className="home-product-item__price">
                                                 <span className="home-product-item__price-current">
-                                                    {VND.format(currentMobile.currentPrice)}
+                                                    {VND.format(
+                                                        currentMobile.price -
+                                                            currentMobile.price * (currentMobile.discount / 100),
+                                                    )}
                                                 </span>
                                                 <button>
                                                     <i className="fa-solid fa-circle-plus"></i>

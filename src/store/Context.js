@@ -55,7 +55,7 @@ export const ContextProvider = ({ children }) => {
     // get User in Social
     useEffect(() => {
         const getUser = () => {
-            fetch('http://localhost:8800/api/auth/login/success', {
+            fetch('http://localhost:8800/api/auth/success', {
                 method: 'GET',
                 credentials: 'include',
                 headers: {
@@ -85,7 +85,7 @@ export const ContextProvider = ({ children }) => {
     // get All mobile in database
     useEffect(() => {
         const getMobile = async () => {
-            const res = await axios.get('/mobile');
+            const res = await axios.get('/product/mobile');
             setMobile(res.data);
         };
 
@@ -95,7 +95,7 @@ export const ContextProvider = ({ children }) => {
     // Get outstandingMobile Mobile
     useEffect(() => {
         const getMostMobile = async () => {
-            const res = await axios.get('/mobile/mostmobile');
+            const res = await axios.get('/product/mostmobile');
             setOutStandingMobile(res.data);
         };
 
@@ -105,7 +105,7 @@ export const ContextProvider = ({ children }) => {
     // get All tablet from database
     useEffect(() => {
         const getTablet = async () => {
-            const res = await axios.get('/tablet');
+            const res = await axios.get('/product/tablet');
             setTablet(res.data);
         };
 
@@ -115,7 +115,7 @@ export const ContextProvider = ({ children }) => {
     //get Outstanding Tablet
     useEffect(() => {
         const getMostTablet = async () => {
-            const res = await axios.get('/tablet/mosttablet');
+            const res = await axios.get('/product/mosttablet');
             setOutStandingTablet(res.data);
         };
 
