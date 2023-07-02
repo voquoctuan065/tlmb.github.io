@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import './cartdrawer.css';
 import Context from '~/store/Context';
 
@@ -32,32 +32,35 @@ const productItem = [
 
 function CartDrawer() {
     const { currentUser, user } = useContext(Context);
+
     return (
         <div>
             {currentUser || user ? (
                 <div className="header__cart-list">
-                    <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
-                    <ul class="header__cart-list-item">
+                    <h4 className="header__cart-heading">Sản phẩm đã thêm</h4>
+                    <ul className="header__cart-list-item">
                         {productItem.map((currentProduct, index) => (
-                            <li class="header__cart-item" key={index}>
+                            <li className="header__cart-item" key={index}>
                                 <div
-                                    class="header__cart-img"
+                                    className="header__cart-img"
                                     style={{
                                         backgroundImage: `url(${currentProduct.url})`,
                                     }}
                                 ></div>
-                                <div class="header__cart-item-info">
-                                    <div class="header__cart-item-head">
-                                        <h5 class="header__cart-item-name">{currentProduct.productName}</h5>
-                                        <div class="header__cart-item-price-wrap">
-                                            <span class="header__cart-item-price">{currentProduct.productPrice}đ</span>
+                                <div className="header__cart-item-info">
+                                    <div className="header__cart-item-head">
+                                        <h5 className="header__cart-item-name">{currentProduct.productName}</h5>
+                                        <div className="header__cart-item-price-wrap">
+                                            <span className="header__cart-item-price">
+                                                {currentProduct.productPrice}đ
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
                             </li>
                         ))}
                     </ul>
-                    <a class="header__cart-view-cart btn--primary" href="/">
+                    <a className="header__cart-view-cart btn--primary" href="/">
                         Xem giỏ hàng
                     </a>
                 </div>

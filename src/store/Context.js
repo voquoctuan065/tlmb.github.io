@@ -7,10 +7,7 @@ const Context = createContext();
 export const ContextProvider = ({ children }) => {
     // Login logout logic
     const [user, setUser] = useState(null);
-    const [mobile, setMobile] = useState([]);
-    const [outstandingMobile, setOutStandingMobile] = useState([]);
-    const [tablet, setTablet] = useState([]);
-    const [outstandingTablet, setOutStandingTablet] = useState([]);
+    const [product, setProduct] = useState([]);
 
     const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem('user')) || null);
 
@@ -82,44 +79,14 @@ export const ContextProvider = ({ children }) => {
         localStorage.setItem('user', JSON.stringify(currentUser));
     }, [currentUser]);
 
-    // get All mobile in database
+    //Get all product
     useEffect(() => {
-        const getMobile = async () => {
-            const res = await axios.get('/product/mobile');
-            setMobile(res.data);
+        const getAllProduct = async () => {
+            const res = await axios.post('/product');
+            setProduct(res.data);
         };
 
-        getMobile();
-    }, []);
-
-    // Get outstandingMobile Mobile
-    useEffect(() => {
-        const getMostMobile = async () => {
-            const res = await axios.get('/product/mostmobile');
-            setOutStandingMobile(res.data);
-        };
-
-        getMostMobile();
-    }, []);
-
-    // get All tablet from database
-    useEffect(() => {
-        const getTablet = async () => {
-            const res = await axios.get('/product/tablet');
-            setTablet(res.data);
-        };
-
-        getTablet();
-    }, []);
-
-    //get Outstanding Tablet
-    useEffect(() => {
-        const getMostTablet = async () => {
-            const res = await axios.get('/product/mosttablet');
-            setOutStandingTablet(res.data);
-        };
-
-        getMostTablet();
+        getAllProduct();
     }, []);
 
     return (
@@ -133,10 +100,7 @@ export const ContextProvider = ({ children }) => {
                 google,
                 facebook,
                 VND,
-                mobile,
-                outstandingMobile,
-                tablet,
-                outstandingTablet,
+                product,
             }}
         >
             {children}

@@ -32,7 +32,9 @@ function LIST({ cln, btnTitle }) {
 }
 
 function Mobile() {
-    const { VND, mobile } = useContext(Context);
+    const { VND, product } = useContext(Context);
+    let count = 0;
+    for (let pro of product) if (pro.catalog_id === 11) count += 1;
 
     return (
         <ProductPage>
@@ -240,50 +242,60 @@ function Mobile() {
                                         <LIST cln={['btn-quick-sort created-asc']} btnTitle="Cũ nhất" />
                                     </ul>
                                 </div>
-                                <span className="coll-count">{mobile.length + ' sản phẩm'}</span>
+
+                                <span className="coll-count">{count + ' sản phẩm'}</span>
                             </div>
                             <div className="section-product">
                                 <div className="row sm-gutter">
-                                    {mobile.map((currentMobile) => (
-                                        <div className="col-3 col-md-3 home-product-item" key={currentMobile.id}>
-                                            <a href="/">
-                                                <div
-                                                    className="home-product-item__img"
-                                                    style={{
-                                                        backgroundImage: `url(${currentMobile.image_link})`,
-                                                    }}
-                                                ></div>
-                                                <h3 className="product-name">{currentMobile.productName}</h3>
-                                            </a>
-                                            <div className="item-compare gray-bg">
-                                                <span>{currentMobile.screenSize}</span>
-                                                <span>{currentMobile.resolution}</span>
-                                            </div>
-                                            {currentMobile.discount > 0 ? (
-                                                <div className="box-p">
-                                                    <p className="price-old black">{VND.format(currentMobile.price)}</p>
-                                                    <span className="percent">{currentMobile.discount + '%'}</span>
+                                    {product.map((currentMobile) =>
+                                        currentMobile.catalog_id === 11 ? (
+                                            <div
+                                                className="col-3 col-md-3 home-product-item"
+                                                key={currentMobile.productId}
+                                            >
+                                                <a href="/">
+                                                    <div
+                                                        className="home-product-item__img"
+                                                        style={{
+                                                            backgroundImage: `url(${currentMobile.image_link})`,
+                                                        }}
+                                                    ></div>
+                                                    <h3 className="product-name">{currentMobile.productName}</h3>
+                                                </a>
+                                                <div className="item-compare gray-bg">
+                                                    <span>{currentMobile.screenSize}</span>
+                                                    <span>{currentMobile.resolution}</span>
                                                 </div>
-                                            ) : (
-                                                ''
-                                            )}
-                                            <div className="home-product-item__price">
-                                                <span className="home-product-item__price-current">
-                                                    {VND.format(
-                                                        currentMobile.price -
-                                                            currentMobile.price * (currentMobile.discount / 100),
-                                                    )}
-                                                </span>
-                                                <button>
-                                                    <i className="fa-solid fa-circle-plus"></i>
-                                                </button>
-                                            </div>
+                                                {currentMobile.discount > 0 ? (
+                                                    <div className="box-p">
+                                                        <p className="price-old black">
+                                                            {VND.format(currentMobile.price)}
+                                                        </p>
+                                                        <span className="percent">{currentMobile.discount + '%'}</span>
+                                                    </div>
+                                                ) : (
+                                                    ''
+                                                )}
+                                                <div className="home-product-item__price">
+                                                    <span className="home-product-item__price-current">
+                                                        {VND.format(
+                                                            currentMobile.price -
+                                                                currentMobile.price * (currentMobile.discount / 100),
+                                                        )}
+                                                    </span>
+                                                    <button>
+                                                        <i className="fa-solid fa-circle-plus"></i>
+                                                    </button>
+                                                </div>
 
-                                            <div className="home-product-item__favourite">
-                                                <span>Trả góp 0%</span>
+                                                <div className="home-product-item__favourite">
+                                                    <span>Trả góp 0%</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        ) : (
+                                            ''
+                                        ),
+                                    )}
                                 </div>
                             </div>
                         </div>
