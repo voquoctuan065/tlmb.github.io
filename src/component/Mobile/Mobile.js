@@ -32,7 +32,7 @@ function LIST({ cln, btnTitle }) {
 }
 
 function Mobile() {
-    const { VND, product } = useContext(Context);
+    const { VND, product, addToCart } = useContext(Context);
     let count = 0;
     for (let pro of product) if (pro.catalog_id === 11) count += 1;
 
@@ -283,7 +283,7 @@ function Mobile() {
                                                                 currentMobile.price * (currentMobile.discount / 100),
                                                         )}
                                                     </span>
-                                                    <button>
+                                                    <button onClick={() => addToCart(currentMobile.productId)}>
                                                         <i className="fa-solid fa-circle-plus"></i>
                                                     </button>
                                                 </div>

@@ -32,7 +32,9 @@ function LIST({ cln, btnTitle }) {
 }
 
 function BackupCharger() {
-    const { VND, mobile } = useContext(Context);
+    const { VND, product, addToCart } = useContext(Context);
+    let count = 0;
+    for (let pro of product) if (pro.catalog_id === 44) count += 1;
 
     return (
         <ProductPage>
@@ -42,7 +44,7 @@ function BackupCharger() {
                         <a href="/">Trang chủ</a>
                     </li>
                     <div className="slash">/</div>
-                    <li className="active">Xạc dự phòng</li>
+                    <li className="active">Sạc dự phòng</li>
                 </ul>
             </nav>
 
@@ -170,61 +172,12 @@ function BackupCharger() {
                                     </ul>
                                 </div>
                             </aside>
-
-                            {/* Loc theo man hinh */}
-                            <aside className="aside-item filter-vendor margin-bottom-10">
-                                <div className="aside-title">Màn hình</div>
-                                <div className="aside-content filter-group">
-                                    <ul>
-                                        <LI
-                                            filter="filter-duoi5-inch"
-                                            type="checkbox"
-                                            dataGroup="Màn hình"
-                                            dataField="screen"
-                                            dataText="Dưới 5 inch"
-                                            dataOperator="OR"
-                                            value="<5"
-                                            title="Màn hình nhỏ: dưới 5 inch"
-                                        />
-                                        <LI
-                                            filter="filter-duoi6-inch"
-                                            type="checkbox"
-                                            dataGroup="Màn hình"
-                                            dataField="screen"
-                                            dataText="Dưới 6 inch"
-                                            dataOperator="OR"
-                                            value="<6"
-                                            title="Nhỏ gọn vừa tay: dưới 6 inch"
-                                        />
-                                        <LI
-                                            filter="filter-tren6-inch"
-                                            type="checkbox"
-                                            dataGroup="Màn hình"
-                                            dataField="screen"
-                                            dataText="Trên 6 inch"
-                                            dataOperator="OR"
-                                            value=">6"
-                                            title="Trên 6 inch"
-                                        />
-                                        <LI
-                                            filter="filter-man-hinh-gap"
-                                            type="checkbox"
-                                            dataGroup="Màn hình"
-                                            dataField="screen"
-                                            dataText="Màn hình gập"
-                                            dataOperator="OR"
-                                            value="Màn hình gập"
-                                            title="Màn hình gập"
-                                        />
-                                    </ul>
-                                </div>
-                            </aside>
                         </div>
                     </div>
 
                     <div className="collection-container col-9 right">
                         <div className="title-module padding-0 margin-bottom-15">
-                            <h1>Điện thoại</h1>
+                            <h1>Sạc dự phòng</h1>
                         </div>
                         <div className="row category-product product">
                             <div className="sort-cate-left d-flex align-center bg-white margin-bottom-20 padding-15">
@@ -240,55 +193,60 @@ function BackupCharger() {
                                         <LIST cln={['btn-quick-sort created-asc']} btnTitle="Cũ nhất" />
                                     </ul>
                                 </div>
-                                <span className="coll-count">7 Sản phẩm</span>
+
+                                <span className="coll-count">{count + ' sản phẩm'}</span>
                             </div>
                             <div className="section-product">
                                 <div className="row sm-gutter">
-                                    {mobile.map((currentMobile) => (
-                                        <div className="col-3 col-md-3 home-product-item" key={currentMobile.id}>
-                                            <a href="/">
-                                                <div
-                                                    className="home-product-item__img"
-                                                    style={{
-                                                        backgroundImage: `url(${currentMobile.img})`,
-                                                    }}
-                                                ></div>
-                                                <h3 className="product-name">{currentMobile.mobileName}</h3>
-                                            </a>
-                                            <div className="item-compare gray-bg">
-                                                <span>{currentMobile.screenSize}</span>
-                                                <span>{currentMobile.resolution}</span>
-                                            </div>
-                                            {currentMobile.oldprice ? (
-                                                <div className="box-p">
-                                                    <p className="price-old black">
-                                                        {VND.format(currentMobile.oldprice)}
-                                                    </p>
-                                                    <span className="percent">
-                                                        {Math.round(
-                                                            ((currentMobile.oldprice - currentMobile.currentPrice) /
-                                                                currentMobile.oldprice) *
-                                                                100,
-                                                        ) + '%'}
-                                                    </span>
+                                    {product.map((currentMobile) =>
+                                        currentMobile.catalog_id === 44 ? (
+                                            <div
+                                                className="col-3 col-md-3 home-product-item"
+                                                key={currentMobile.productId}
+                                            >
+                                                <a href="/">
+                                                    <div
+                                                        className="home-product-item__img"
+                                                        style={{
+                                                            backgroundImage: `url(${currentMobile.image_link})`,
+                                                        }}
+                                                    ></div>
+                                                    <h3 className="product-name">{currentMobile.productName}</h3>
+                                                </a>
+                                                <div className="item-compare gray-bg">
+                                                    <span>{currentMobile.screenSize}</span>
+                                                    <span>{currentMobile.resolution}</span>
                                                 </div>
-                                            ) : (
-                                                ''
-                                            )}
-                                            <div className="home-product-item__price">
-                                                <span className="home-product-item__price-current">
-                                                    {VND.format(currentMobile.currentPrice)}
-                                                </span>
-                                                <button>
-                                                    <i className="fa-solid fa-circle-plus"></i>
-                                                </button>
-                                            </div>
+                                                {currentMobile.discount > 0 ? (
+                                                    <div className="box-p">
+                                                        <p className="price-old black">
+                                                            {VND.format(currentMobile.price)}
+                                                        </p>
+                                                        <span className="percent">{currentMobile.discount + '%'}</span>
+                                                    </div>
+                                                ) : (
+                                                    ''
+                                                )}
+                                                <div className="home-product-item__price">
+                                                    <span className="home-product-item__price-current">
+                                                        {VND.format(
+                                                            currentMobile.price -
+                                                                currentMobile.price * (currentMobile.discount / 100),
+                                                        )}
+                                                    </span>
+                                                    <button onClick={() => addToCart(currentMobile.productId)}>
+                                                        <i className="fa-solid fa-circle-plus"></i>
+                                                    </button>
+                                                </div>
 
-                                            <div className="home-product-item__favourite">
-                                                <span>Trả góp 0%</span>
+                                                <div className="home-product-item__favourite">
+                                                    <span>Trả góp 0%</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        ) : (
+                                            ''
+                                        ),
+                                    )}
                                 </div>
                             </div>
                         </div>

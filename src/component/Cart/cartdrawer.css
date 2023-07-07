@@ -105,3 +105,9 @@
     border-radius: 4px;
     padding: 0.6rem 1.2rem;
 }
+
+.remove-btn {
+    padding-left: 10px;
+    background: none;
+    color: #ccc;
+}

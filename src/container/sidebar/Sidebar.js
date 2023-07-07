@@ -26,15 +26,15 @@ function Sidebar() {
                         </li>
                         <li className="menu-item list-group-item">
                             <i className="fa-solid fa-bolt"></i>
-                            <a href="/backupcharger">Xạc dự phòng</a>
+                            <a href="/backupcharger">sạc dự phòng</a>
                         </li>
                         <li className="menu-item list-group-item">
                             <i className="fa-sharp fa-solid fa-charging-station"></i>
-                            <a href="/charger">Củ xạc</a>
+                            <a href="/charger">Củ sạc</a>
                         </li>
                         <li className="menu-item list-group-item">
                             <i className="fa-solid fa-code-compare"></i>
-                            <a href="/chargingcord">Cáp xạc</a>
+                            <a href="/chargingcord">Cáp sạc</a>
                         </li>
                         <li className="menu-item list-group-item">
                             <i className="fa-solid fa-microscope"></i>

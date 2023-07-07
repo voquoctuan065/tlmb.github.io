@@ -7,31 +7,8 @@ import CartDrawer from '~/component/Cart/Cartdrawer';
 import { Navbar } from '..';
 import Context from '~/store/Context';
 
-const productItem = [
-    {
-        url: 'https://down-vn.img.susercontent.com/file/b4a2bd138f078704fa1846857f3eb80e_tn',
-        productName: 'Bàn phím cơ DAREU EK880 led RGB (RGB, Blue/ Brown/ Red D switch)',
-        productPrice: '2.000.000',
-    },
-    {
-        url: 'https://down-vn.img.susercontent.com/file/b4a2bd138f078704fa1846857f3eb80e_tn',
-        productName: 'Bàn phím cơ DAREU EK880 led RGB (RGB, Blue/ Brown/ Red D switch)',
-        productPrice: '3.000.000',
-    },
-    {
-        url: 'https://down-vn.img.susercontent.com/file/b4a2bd138f078704fa1846857f3eb80e_tn',
-        productName: 'Bàn phím cơ DAREU EK880 led RGB (RGB, Blue/ Brown/ Red D switch)',
-        productPrice: '4.000.000',
-    },
-    {
-        url: 'https://down-vn.img.susercontent.com/file/b4a2bd138f078704fa1846857f3eb80e_tn',
-        productName: 'Bàn phím cơ DAREU EK880 led RGB (RGB, Blue/ Brown/ Red D switch)',
-        productPrice: '4.000.000',
-    },
-];
-
 const Header = () => {
-    const { currentUser, user } = useContext(Context);
+    const { currentUser, user, cartProduct } = useContext(Context);
     return (
         <div>
             <Navbar />
@@ -194,7 +171,7 @@ const Header = () => {
                         <Search />
                     </div>
 
-                    <div className="header-with-search__cart-wrapper" id="Cart_Oder">
+                    <div className="header-with-search__cart-wrapper" id="cart">
                         <Tippy
                             interactive={true}
                             placement="bottom-end"
@@ -209,10 +186,10 @@ const Header = () => {
                                     <i className="header__cart-icon fas fa-shopping-cart"></i>
                                 </a>
                                 {currentUser || user ? (
-                                    productItem.length === 0 ? (
+                                    cartProduct.length === 0 ? (
                                         ''
                                     ) : (
-                                        <span className="header__cart-notice">{productItem.length}</span>
+                                        <span className="header__cart-notice">{cartProduct.length}</span>
                                     )
                                 ) : (
                                     ''

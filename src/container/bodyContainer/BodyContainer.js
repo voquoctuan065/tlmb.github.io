@@ -5,12 +5,9 @@ import './bodycontainer.css';
 import Context from '~/store/Context';
 import Sidebar from '../sidebar/Sidebar';
 import Banner from '~/component/Banner/Banner';
-import { CartContext } from '~/store/CartContext';
 
 function BodyContainer() {
-    const { VND, product } = useContext(Context);
-    const { cartProduct, setCartProduct, addToCart } = useContext(CartContext);
-
+    const { VND, product, addToCart } = useContext(Context);
     return (
         <div className="container">
             <div className="grid wide">
@@ -49,6 +46,7 @@ function BodyContainer() {
                                             <span className="home-product-item__price-current">
                                                 {VND.format(item.price - item.price * (item.discount / 100))}
                                             </span>
+
                                             <button onClick={() => addToCart(item.productId)}>
                                                 <i className="fa-solid fa-circle-plus"></i>
                                             </button>
@@ -159,7 +157,7 @@ function BodyContainer() {
                                                             tablet.price - tablet.price * (tablet.discount / 100),
                                                         )}
                                                     </span>
-                                                    <button>
+                                                    <button onClick={() => addToCart(tablet.productId)}>
                                                         <i className="fa-solid fa-circle-plus"></i>
                                                     </button>
                                                 </div>
@@ -177,6 +175,59 @@ function BodyContainer() {
                     </div>
                 </div>
 
+                <div className="body-fouth-component">
+                    <h2 className="heading-bar-title">
+                        <a href="/mobile">Tai nghe</a>
+                        <div className="heading-bar-right"></div>
+                    </h2>
+
+                    <div className="homproduct">
+                        <div className="row sm-gutter">
+                            {/* item1 */}
+                            {product.map((item) =>
+                                item.catalog_id === 33 && item.outstanding == 1 ? (
+                                    <div
+                                        className="col-6 col-md-3 home-product-item"
+                                        key={item.productId}
+                                        id={item.productId}
+                                    >
+                                        <a href="/">
+                                            <div
+                                                className="home-product-item__img"
+                                                style={{
+                                                    backgroundImage: `url(${item.image_link})`,
+                                                }}
+                                            ></div>
+                                            <span className="home-product-item__name">{item.productName}</span>
+                                        </a>
+
+                                        <div className="home-product-item__price">
+                                            <span className="home-product-item__price-current">
+                                                {VND.format(item.price - item.price * (item.discount / 100))}
+                                            </span>
+
+                                            <button onClick={() => addToCart(item.productId)}>
+                                                <i className="fa-solid fa-circle-plus"></i>
+                                            </button>
+                                        </div>
+
+                                        <div className="home-product-item__favourite">
+                                            <span>{'Giảm ' + item.discount + '%'}</span>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    ''
+                                ),
+                            )}
+
+                            <div className="text-center mt-5 col-12">
+                                <a href="/mobile" title="Xem tất cả" className="see-btn seebtn-product">
+                                    Xem tất cả
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div className="section_brand">
                     <div className="container card border-0">
                         <div className="title_module_main">

@@ -5,7 +5,7 @@ import BodyContainer from '~/container/bodyContainer/BodyContainer';
 function HomePage() {
     return (
         <div>
-            <div className="heading heading-top-sticky">
+            <div className="heading">
                 <Header />
             </div>
             <div className="body-container">
