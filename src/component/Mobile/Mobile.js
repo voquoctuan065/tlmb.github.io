@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import ProductPage from '../../pages/ProductPage/ProductPage';
 import Context from '~/store/Context';
 
-function LI({ filter, type, dataGroup, dataField, dataText, value, dataOperator, title }) {
+function LI({ filter, type, dataGroup, dataField, name, value, dataOperator, title }) {
     return (
         <li className="filter-item filter-item--check-box filter-item--green vendorxxx">
             <span>
@@ -11,7 +11,7 @@ function LI({ filter, type, dataGroup, dataField, dataText, value, dataOperator,
                         type={type}
                         data-group={dataGroup}
                         data-field={dataField}
-                        data-text={dataText}
+                        name={name}
                         value={`(${value})`}
                         data-operator={dataOperator}
                     />
@@ -65,7 +65,7 @@ function Mobile() {
                                             type="checkbox"
                                             dataGroup="Hãng"
                                             dataField="vendor"
-                                            dataText="Apple"
+                                            name="Apple"
                                             dataOperator="OR"
                                             value="Apple"
                                             title="Apple"
@@ -75,7 +75,7 @@ function Mobile() {
                                             type="checkbox"
                                             dataGroup="Hãng"
                                             dataField="vendor"
-                                            dataText="Samsung"
+                                            name="Samsung"
                                             dataOperator="OR"
                                             value="Samsung"
                                             title="Samsung"
@@ -85,7 +85,7 @@ function Mobile() {
                                             type="checkbox"
                                             dataGroup="Hãng"
                                             dataField="vendor"
-                                            dataText="Xiaomi"
+                                            name="Xiaomi"
                                             dataOperator="OR"
                                             value="Xiaomi"
                                             title="Xiaomi"
@@ -95,7 +95,7 @@ function Mobile() {
                                             type="checkbox"
                                             dataGroup="Hãng"
                                             dataField="vendor"
-                                            dataText="Nokia"
+                                            name="Nokia"
                                             dataOperator="OR"
                                             value="Nokia"
                                             title="Nokia"
@@ -105,7 +105,7 @@ function Mobile() {
                                             type="checkbox"
                                             dataGroup="Hãng"
                                             dataField="vendor"
-                                            dataText="Realme"
+                                            name="Realme"
                                             dataOperator="OR"
                                             value="Realme"
                                             title="Realme"

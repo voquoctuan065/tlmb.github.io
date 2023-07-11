@@ -10,7 +10,7 @@ import Context from '~/store/Context';
 const Header = () => {
     const { currentUser, user, cartProduct } = useContext(Context);
     return (
-        <div>
+        <div className="container">
             <Navbar />
             <div className="header-wrapper header-with-search-wrapper">
                 <div className="header header-with-search">
