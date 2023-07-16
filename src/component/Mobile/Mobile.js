@@ -2,37 +2,38 @@ import { useContext } from 'react';
 import ProductPage from '../../pages/ProductPage/ProductPage';
 import Context from '~/store/Context';
 
-function LI({ filter, type, dataGroup, dataField, name, value, dataOperator, title }) {
-    return (
-        <li className="filter-item filter-item--check-box filter-item--green vendorxxx">
-            <span>
-                <label htmlFor={filter}>
-                    <input
-                        type={type}
-                        data-group={dataGroup}
-                        data-field={dataField}
-                        name={name}
-                        value={`(${value})`}
-                        data-operator={dataOperator}
-                    />
-                    <i className="fa"></i>
-                    <span>{title}</span>
-                </label>
-            </span>
-        </li>
-    );
-}
-
-function LIST({ cln, btnTitle }) {
+function LIST({ cln, btnTitle, func }) {
     return (
         <li className={cln}>
-            <button>{btnTitle}</button>
+            <button onClick={func}>{btnTitle}</button>
         </li>
     );
 }
 
 function Mobile() {
-    const { VND, product, addToCart } = useContext(Context);
+    const {
+        VND,
+        product,
+        addToCart,
+        getMApple,
+        getMSamsung,
+        getMXiaomi,
+        getMRealme,
+        getMVivo,
+        getMPriceFirst,
+        getMPriceSecond,
+        getMPriceThird,
+        getMPriceFourth,
+        getMPriceLast,
+        getMScreenU5,
+        getMScreenU6,
+        getMScreen6,
+        getMScreenG,
+        getMNameAZ,
+        getMNameZA,
+        getMPriceAsc,
+        getMPriceDesc,
+    } = useContext(Context);
     let count = 0;
     for (let pro of product) if (pro.catalog_id === 11) count += 1;
 
@@ -58,59 +59,42 @@ function Mobile() {
                             {/* Loc theo thuong hieu */}
                             <aside className="aside-item filter-vendor margin-bottom-10">
                                 <div className="aside-title">Thương hiệu</div>
-                                <div className="aside-content filter-group">
-                                    <ul>
-                                        <LI
-                                            filter="filter-apple"
-                                            type="checkbox"
-                                            dataGroup="Hãng"
-                                            dataField="vendor"
-                                            name="Apple"
-                                            dataOperator="OR"
-                                            value="Apple"
-                                            title="Apple"
-                                        />
-                                        <LI
-                                            filter="filter-samsung"
-                                            type="checkbox"
-                                            dataGroup="Hãng"
-                                            dataField="vendor"
-                                            name="Samsung"
-                                            dataOperator="OR"
-                                            value="Samsung"
-                                            title="Samsung"
-                                        />
-                                        <LI
-                                            filter="filter-xiaomi"
-                                            type="checkbox"
-                                            dataGroup="Hãng"
-                                            dataField="vendor"
-                                            name="Xiaomi"
-                                            dataOperator="OR"
-                                            value="Xiaomi"
-                                            title="Xiaomi"
-                                        />
-                                        <LI
-                                            filter="filter-nokia"
-                                            type="checkbox"
-                                            dataGroup="Hãng"
-                                            dataField="vendor"
-                                            name="Nokia"
-                                            dataOperator="OR"
-                                            value="Nokia"
-                                            title="Nokia"
-                                        />
-                                        <LI
-                                            filter="filter-realme"
-                                            type="checkbox"
-                                            dataGroup="Hãng"
-                                            dataField="vendor"
-                                            name="Realme"
-                                            dataOperator="OR"
-                                            value="Realme"
-                                            title="Realme"
-                                        />
-                                    </ul>
+                                <div className="aside-content filter-group d-flex flex-column">
+                                    <button
+                                        onClick={getMApple}
+                                        className="btn btn-secondary mb-3"
+                                        style={{ width: '50%', fontSize: '12px', marginLeft: '10px', opacity: '.8' }}
+                                    >
+                                        Apple
+                                    </button>
+                                    <button
+                                        onClick={getMSamsung}
+                                        className="btn btn-secondary mb-3"
+                                        style={{ width: '50%', fontSize: '12px', marginLeft: '10px', opacity: '.8' }}
+                                    >
+                                        Samsung
+                                    </button>
+                                    <button
+                                        onClick={getMXiaomi}
+                                        className="btn btn-secondary mb-3"
+                                        style={{ width: '50%', fontSize: '12px', marginLeft: '10px', opacity: '.8' }}
+                                    >
+                                        Xiaomi
+                                    </button>
+                                    <button
+                                        onClick={getMRealme}
+                                        className="btn btn-secondary mb-3"
+                                        style={{ width: '50%', fontSize: '12px', marginLeft: '10px', opacity: '.8' }}
+                                    >
+                                        Realme
+                                    </button>
+                                    <button
+                                        onClick={getMVivo}
+                                        className="btn btn-secondary mb-3"
+                                        style={{ width: '50%', fontSize: '12px', marginLeft: '10px', opacity: '.8' }}
+                                    >
+                                        Vivo
+                                    </button>
                                 </div>
                             </aside>
 
@@ -118,58 +102,41 @@ function Mobile() {
                             <aside className="aside-item filter-vendor margin-bottom-10">
                                 <div className="aside-title">Theo mức giá</div>
                                 <div className="aside-content filter-group">
-                                    <ul>
-                                        <LI
-                                            filter="filter-duoi2-000-000d"
-                                            type="checkbox"
-                                            dataGroup="Khoảng giá"
-                                            dataField="price_min"
-                                            dataText="Dưới 2.000.000đ"
-                                            dataOperator="OR"
-                                            value="<2000000"
-                                            title="Dưới 2.000.000đ"
-                                        />
-                                        <LI
-                                            filter="filter-2-000-000d-4-000-000d"
-                                            type="checkbox"
-                                            dataGroup="Khoảng giá"
-                                            dataField="price_min"
-                                            dataText="2.000.000đ - 4.000.000đ"
-                                            dataOperator="OR"
-                                            value=">=2000000 AND <= 4000000"
-                                            title="2.000.000đ - 4.000.000đ"
-                                        />
-                                        <LI
-                                            filter="filter-4-000-000d-6-000-000d"
-                                            type="checkbox"
-                                            dataGroup="Khoảng giá"
-                                            dataField="price_min"
-                                            dataText="4.000.000đ - 6.000.000đ"
-                                            dataOperator="OR"
-                                            value=">=4000000 AND <= 6000000"
-                                            title="4.000.000đ - 6.000.000đ"
-                                        />
-                                        <LI
-                                            filter="filter-6-000-000d-10-000-000d"
-                                            type="checkbox"
-                                            dataGroup="Khoảng giá"
-                                            dataField="price_min"
-                                            dataText="6.000.000đ - 10.000.000đ"
-                                            dataOperator="OR"
-                                            value=">=6000000 AND <= 10000000"
-                                            title="6.000.000đ - 10.000.000đ"
-                                        />
-                                        <LI
-                                            filter="filter-tren10-000-000d"
-                                            type="checkbox"
-                                            dataGroup="Khoảng giá"
-                                            dataField="price_min"
-                                            dataText="Trên 10.000.000đ"
-                                            dataOperator="OR"
-                                            value=">10000000"
-                                            title="Trên 10.000.000đ"
-                                        />
-                                    </ul>
+                                    <button
+                                        onClick={getMPriceFirst}
+                                        className="btn btn-secondary text-white mb-3"
+                                        style={{ width: '70%', fontSize: '12px', marginLeft: '10px', opacity: '.8' }}
+                                    >
+                                        Dưới 2.000.000đ
+                                    </button>
+                                    <button
+                                        onClick={getMPriceSecond}
+                                        className="btn btn-secondary text-white mb-3"
+                                        style={{ width: '70%', fontSize: '12px', marginLeft: '10px', opacity: '.8' }}
+                                    >
+                                        Từ 2.000.000đ - 4.000.000đ
+                                    </button>
+                                    <button
+                                        onClick={getMPriceThird}
+                                        className="btn btn-secondary text-white mb-3"
+                                        style={{ width: '70%', fontSize: '12px', marginLeft: '10px', opacity: '.8' }}
+                                    >
+                                        Từ 4.000.000đ - 6.000.000đ
+                                    </button>
+                                    <button
+                                        onClick={getMPriceFourth}
+                                        className="btn btn-secondary text-white mb-3"
+                                        style={{ width: '70%', fontSize: '12px', marginLeft: '10px', opacity: '.8' }}
+                                    >
+                                        Từ 6.000.000đ - 10.000.000đ
+                                    </button>
+                                    <button
+                                        onClick={getMPriceLast}
+                                        className="btn btn-secondary text-white mb-3"
+                                        style={{ width: '70%', fontSize: '12px', marginLeft: '10px', opacity: '.8' }}
+                                    >
+                                        Trên 10.000.000đ
+                                    </button>
                                 </div>
                             </aside>
 
@@ -177,48 +144,34 @@ function Mobile() {
                             <aside className="aside-item filter-vendor margin-bottom-10">
                                 <div className="aside-title">Màn hình</div>
                                 <div className="aside-content filter-group">
-                                    <ul>
-                                        <LI
-                                            filter="filter-duoi5-inch"
-                                            type="checkbox"
-                                            dataGroup="Màn hình"
-                                            dataField="screen"
-                                            dataText="Dưới 5 inch"
-                                            dataOperator="OR"
-                                            value="<5"
-                                            title="Màn hình nhỏ: dưới 5 inch"
-                                        />
-                                        <LI
-                                            filter="filter-duoi6-inch"
-                                            type="checkbox"
-                                            dataGroup="Màn hình"
-                                            dataField="screen"
-                                            dataText="Dưới 6 inch"
-                                            dataOperator="OR"
-                                            value="<6"
-                                            title="Nhỏ gọn vừa tay: dưới 6 inch"
-                                        />
-                                        <LI
-                                            filter="filter-tren6-inch"
-                                            type="checkbox"
-                                            dataGroup="Màn hình"
-                                            dataField="screen"
-                                            dataText="Trên 6 inch"
-                                            dataOperator="OR"
-                                            value=">6"
-                                            title="Trên 6 inch"
-                                        />
-                                        <LI
-                                            filter="filter-man-hinh-gap"
-                                            type="checkbox"
-                                            dataGroup="Màn hình"
-                                            dataField="screen"
-                                            dataText="Màn hình gập"
-                                            dataOperator="OR"
-                                            value="Màn hình gập"
-                                            title="Màn hình gập"
-                                        />
-                                    </ul>
+                                    <button
+                                        onClick={getMScreenU5}
+                                        className="btn btn-secondary text-white mb-3"
+                                        style={{ width: '70%', fontSize: '12px', marginLeft: '10px', opacity: '.8' }}
+                                    >
+                                        Màn hình nhỏ: dưới 5 inch
+                                    </button>
+                                    <button
+                                        onClick={getMScreenU6}
+                                        className="btn btn-secondary text-white mb-3"
+                                        style={{ width: '70%', fontSize: '12px', marginLeft: '10px', opacity: '.8' }}
+                                    >
+                                        Nhỏ gọn vừa tay: dưới 6 inch
+                                    </button>
+                                    <button
+                                        onClick={getMScreen6}
+                                        className="btn btn-secondary text-white mb-3"
+                                        style={{ width: '70%', fontSize: '12px', marginLeft: '10px', opacity: '.8' }}
+                                    >
+                                        Trên 6 inch
+                                    </button>
+                                    <button
+                                        onClick={getMScreenG}
+                                        className="btn btn-secondary text-white mb-3"
+                                        style={{ width: '70%', fontSize: '12px', marginLeft: '10px', opacity: '.8' }}
+                                    >
+                                        Màn hình gập
+                                    </button>
                                 </div>
                             </aside>
                         </div>
@@ -234,12 +187,22 @@ function Mobile() {
                                     <span className="sort-title margin-right-10">Sắp xếp:</span>
                                     <ul>
                                         <LIST cln={['btn-quick-sort sort-default default']} btnTitle="Mặc định" />
-                                        <LIST cln={['btn-quick-sort alpha-asc']} btnTitle="Tên A-Z" />
-                                        <LIST cln={['btn-quick-sort alpha-desc']} btnTitle="Tên Z-A" />
-                                        <LIST cln={['btn-quick-sort price-asc']} btnTitle="Giá tăng dần" />
-                                        <LIST cln={['btn-quick-sort price-desc']} btnTitle="Giá giảm dần" />
-                                        <LIST cln={['btn-quick-sort created-desc']} btnTitle="Mới nhất" />
-                                        <LIST cln={['btn-quick-sort created-asc']} btnTitle="Cũ nhất" />
+                                        <LIST cln={['btn-quick-sort alpha-asc']} btnTitle="Tên A-Z" func={getMNameAZ} />
+                                        <LIST
+                                            cln={['btn-quick-sort alpha-desc']}
+                                            btnTitle="Tên Z-A"
+                                            func={getMNameZA}
+                                        />
+                                        <LIST
+                                            cln={['btn-quick-sort price-asc']}
+                                            btnTitle="Giá tăng dần"
+                                            func={getMPriceAsc}
+                                        />
+                                        <LIST
+                                            cln={['btn-quick-sort price-desc']}
+                                            btnTitle="Giá giảm dần"
+                                            func={getMPriceDesc}
+                                        />
                                     </ul>
                                 </div>
 

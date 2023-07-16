@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 import { createContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 
 const Context = createContext();
 
@@ -29,8 +28,8 @@ export const ContextProvider = ({ children }) => {
         let storage = localStorage.getItem('cart');
         if (storage) setCartProduct(JSON.parse(storage));
         // cart = cart.filter((cartItem) => cartItem.filter((item) => item.productId != id));
-        cart = cartProduct.map((item) => item.filter((i) => i.productId != id));
-        newCart = cart.filter((cartitem) => cartitem.length != 0);
+        cart = cartProduct.map((item) => item.filter((i) => i.productId !== id));
+        newCart = cart.filter((cartitem) => cartitem.length !== 0);
         localStorage.setItem('cart', JSON.stringify(setCartProduct(newCart)));
     };
 
@@ -112,6 +111,108 @@ export const ContextProvider = ({ children }) => {
         getAllProduct();
     }, []);
 
+    //Get mobile brand apple
+    const getMApple = async () => {
+        const res = await axios.get('/filter/mapple');
+        setProduct(res.data);
+    };
+
+    //Get mobile brand samsung
+    const getMSamsung = async () => {
+        const res = await axios.get('/filter/msamsung');
+        setProduct(res.data);
+    };
+
+    //Get mobile brand xiaomi
+    const getMXiaomi = async () => {
+        const res = await axios.get('/filter/mxiaomi');
+        setProduct(res.data);
+    };
+
+    //Get mobile brand realme
+    const getMRealme = async () => {
+        const res = await axios.get('/filter/mrealme');
+        setProduct(res.data);
+    };
+
+    //Get mobile brand vivo
+    const getMVivo = async () => {
+        const res = await axios.get('/filter/mvivo');
+        setProduct(res.data);
+    };
+
+    //get mobile price <2000000
+    const getMPriceFirst = async () => {
+        const res = await axios.get('/filter/mpricefirst');
+        setProduct(res.data);
+    };
+
+    //get mobile price 2000000-4000000
+    const getMPriceSecond = async () => {
+        const res = await axios.get('/filter/mpricesecond');
+        setProduct(res.data);
+    };
+
+    // get mobile price 4000000-6000000
+    const getMPriceThird = async () => {
+        const res = await axios.get('/filter/mpricethird');
+        setProduct(res.data);
+    };
+
+    // get mobile price 6000000-10000000
+    const getMPriceFourth = async () => {
+        const res = await axios.get('/filter/mpricefourth');
+        setProduct(res.data);
+    };
+    // get mobile price > 10000000
+    const getMPriceLast = async () => {
+        const res = await axios.get('/filter/mpricelast');
+        setProduct(res.data);
+    };
+
+    // get mobile screen under 5 inch
+    const getMScreenU5 = async () => {
+        const res = await axios.get('/filter/mscreenu5');
+        setProduct(res.data);
+    };
+
+    // get mobile screen under 6 inch
+    const getMScreenU6 = async () => {
+        const res = await axios.get('/filter/mscreenu6');
+        setProduct(res.data);
+    };
+
+    // get mobile screen upper 6 inch
+    const getMScreen6 = async () => {
+        const res = await axios.get('/filter/mscreen6');
+        setProduct(res.data);
+    };
+
+    // get mobile screen man hinh gap
+    const getMScreenG = async () => {
+        const res = await axios.get('/filter/mscreengap');
+        setProduct(res.data);
+    };
+
+    const getMNameAZ = async () => {
+        const res = await axios.get('/filter/mnameaz');
+        setProduct(res.data);
+    };
+
+    const getMNameZA = async () => {
+        const res = await axios.get('/filter/mnameza');
+        setProduct(res.data);
+    };
+
+    const getMPriceAsc = async () => {
+        const res = await axios.get('/filter/mpriceasc');
+        setProduct(res.data);
+    };
+
+    const getMPriceDesc = async () => {
+        const res = await axios.get('/filter/mpricedesc');
+        setProduct(res.data);
+    };
     return (
         <Context.Provider
             value={{
@@ -128,6 +229,24 @@ export const ContextProvider = ({ children }) => {
                 setCartProduct,
                 addToCart,
                 removeItem,
+                getMApple,
+                getMSamsung,
+                getMRealme,
+                getMXiaomi,
+                getMVivo,
+                getMPriceFirst,
+                getMPriceSecond,
+                getMPriceThird,
+                getMPriceFourth,
+                getMPriceLast,
+                getMScreenU5,
+                getMScreenU6,
+                getMScreen6,
+                getMScreenG,
+                getMNameAZ,
+                getMNameZA,
+                getMPriceAsc,
+                getMPriceDesc,
             }}
         >
             {children}
